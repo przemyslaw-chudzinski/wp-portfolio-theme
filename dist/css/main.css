@@ -2702,6 +2702,8 @@ a:hover {
     font-size: 1.5rem; }
   .navigation__list-item:not(:last-child) {
     margin-right: 2rem; }
+  .navigation__list-item.active .navigation__list-link {
+    color: #3d5afe; }
   .navigation__list-link:link, .navigation__list-link:visited {
     display: inline-block;
     text-decoration: none;

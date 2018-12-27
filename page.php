@@ -1,6 +1,7 @@
-<?= get_header(); ?>
+<?= get_header() ?>
+
 <!-- Header -->
-<header class="header header--big">
+<header class="header" style="background-image: url(<?= get_the_post_thumbnail_url() ?>)">
     <!-- Navigation -->
     <div class="navigation">
         <div class="container">
@@ -45,20 +46,19 @@
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <h1 class="header__content-heading">Przemysław Chudziński</h1>
-                <p class="header__content-desc">
-                    <span class="label label--primary">Webdeveloper</span>
-                    <span class="label label--primary">Pasjonat szybkiej nauki</span>
-                </p>
+                <h1 class="header__content-heading"><?= get_the_title() ?></h1>
             </div>
         </div>
     </div>
 </header>
 <!-- END: Header -->
+
 <main>
- strona główna
+
+    <div class="container">
+        <?= the_content() ?>
+    </div>
+
 </main>
 
 <?= get_footer(); ?>
-
-

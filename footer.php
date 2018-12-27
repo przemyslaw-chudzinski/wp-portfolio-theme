@@ -45,3 +45,8 @@
         Built By <a href="http://przemyslawchudzinski.pl">Przemysław Chudziński</a>
     </div>
 </footer>
+<!-- Scripts -->
+<script src="js/app.js"></script>
+<?= wp_footer(); ?>
+</body>
+</html>

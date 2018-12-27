@@ -66,6 +66,10 @@
     }
   }
 
+  &__list-item.active &__list-link {
+    color: $color-primary;
+  }
+
   &__list-link {
     &:link,
     &:visited {
