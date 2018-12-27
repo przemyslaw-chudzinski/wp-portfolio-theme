@@ -1,0 +1,39 @@
+body {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:active {
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    transition: $transition-base;
+  }
+  &:hover {
+    color: $color-primary-light;
+  }
+}

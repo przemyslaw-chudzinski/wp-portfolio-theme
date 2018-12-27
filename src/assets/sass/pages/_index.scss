@@ -1,0 +1,9 @@
+.blog-section {
+  padding: 5rem 0;
+  &__categories {
+    margin-bottom: 4rem;
+    .label {
+      color: $color-primary-white;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.label {
+
+  &,
+  &:link,
+  &:active,
+  &:visited {
+    display: inline-block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    font-size: inherit;
+    border-radius: .5rem;
+    text-align: center;
+  }
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-primary-white;
+    border-color: $color-primary;
+  }
+
+  &--secondary {
+
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid;
+    color: $color-primary !important;
+  }
+
+}

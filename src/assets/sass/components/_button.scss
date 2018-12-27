@@ -1,0 +1,30 @@
+.button {
+  &,
+  &:link,
+  &:visited {
+    border: 1px solid transparent;
+    box-shadow: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1rem 3rem;
+    transition: $transition-base;
+  }
+
+  &__primary {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    &:hover {
+      color: $color-primary-light;
+    }
+  }
+
+  &__primary-light {
+    border: 1px solid $color-primary-light;
+    color: $color-primary-light;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

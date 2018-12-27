@@ -1,0 +1,68 @@
+.header {
+
+  height: 40rem;
+  position: relative;
+  background-image: url('../images/header-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  > * {
+    position: relative;
+    z-index: 200;
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+    height: 100%;
+  }
+
+  &__content-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-primary-white;
+    width: 80%;
+  }
+
+  &__content-desc {
+    text-align: center;
+    span {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__content-heading {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &--big {
+    height: 80rem;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 300;
+  }
+
+  // Header overlay
+  &:after {
+    content: '';
+    background-color: $color-secondary-dark;
+    opacity: .5;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+  }
+
+}
