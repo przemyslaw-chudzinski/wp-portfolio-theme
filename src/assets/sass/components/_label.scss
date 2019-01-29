@@ -22,8 +22,14 @@
 
   }
 
+  &--white {
+    background-color: $color-primary-white;
+    color: $color-primary-white !important;
+    border-color: $color-primary-white;
+  }
+
   &--outline {
-    background-color: transparent;
+    background-color: transparent !important;
     border: 1px solid;
     color: $color-primary !important;
   }

@@ -15,10 +15,20 @@
 @import "components/form";
 @import "components/contact-form";
 @import "components/button";
+@import "components/project";
+@import "components/project-secondary";
+@import "components/search-btn";
+@import "components/cookies-info";
+@import "components/info";
+@import "components/pagination";
+@import "components/preloader";
+@import "components/message";
 // Layout
 @import "layout/header";
 @import "layout/navigation";
+@import "layout/mobile-nav";
 @import "layout/footer";
+@import "layout/search";
 // Pages
 @import "pages/index";
 @import "pages/blank";
@@ -26,3 +36,5 @@
 @import "pages/contact";
 @import "pages/single-post";
 @import "pages/single-project";
+@import "pages/projects";
+@import "pages/404";

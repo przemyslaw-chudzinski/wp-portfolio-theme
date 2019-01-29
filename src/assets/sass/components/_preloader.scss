@@ -1,0 +1,29 @@
+.preloader-1 {
+
+  border-width: 4px;
+  border-radius: 50%;
+  border-style: solid;
+  animation-name: rotateAnimation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 2s;
+
+  &--primary {
+    border-color: transparent $color-primary;
+  }
+
+  &--primary-white {
+    border-color: transparent $color-primary-white;
+  }
+
+  &--size-medium {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  &--size-big {
+    width: 10rem;
+    height: 10rem;
+  }
+
+}

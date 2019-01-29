@@ -1,52 +1,45 @@
-<!-- Contact form -->
-<div class="contact-form">
+<?= get_template_part('partials/contact-form'); ?>
+<!-- Footer -->
+<footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3">
-                <div class="contact-form__heading">
-                    <h2>Masz pytania? Pisz śmiało :)</h2>
-                </div>
+            <div class="col">
+                Designed & Built By Przemysław Chudziński
             </div>
-            <div class="col-lg-9">
-                <form class="form">
-                    <div class="row">
-                        <div class="col-12 col-lg-4">
-                            <div class="form-group">
-                                <label for="name" class="form-group__label">Imię i Nazwisko</label>
-                                <input id="name" type="text" class="form-group__input" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <div class="form-group">
-                                <label for="email" class="form-group__label">Adres email</label>
-                                <input id="email" type="email" class="form-group__input" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4">
-                            <div class="form-group">
-                                <label for="phone" class="form-group__label">Number telefonu</label>
-                                <input id="phone" type="text" class="form-group__input" autocomplete="off">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-group__label">Wiadmość</label>
-                        <textarea rows="7" class="form-group__input" autocomplete="off"></textarea>
-                    </div>
-                    <button type="submit" class="button button__primary">Wyślij</button>
-                </form>
+            <div class="col footer__menu">
+                <?php if(function_exists('the_ratings')) { the_ratings(); } ?>
             </div>
         </div>
     </div>
-</div>
-<!-- END: Contact form -->
-<footer class="footer">
-    <div class="container">
-        Built By <a href="http://przemyslawchudzinski.pl">Przemysław Chudziński</a>
-    </div>
 </footer>
+<!-- END: Footer -->
+<?= get_template_part('partials/search'); ?>
+<?= get_template_part('partials/mobile-navigation'); ?>
+<?= get_template_part('partials/cookies-info'); ?>
 <!-- Scripts -->
-<script src="js/app.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55938708-9"></script>
+
 <?= wp_footer(); ?>
+<script>
+    PortfolioTheme.MobileMenu.init();
+    PortfolioTheme.DynamicBackground.init();
+    PortfolioTheme.Parallax.init();
+    PortfolioTheme.Search.init();
+    PortfolioTheme.CookiesInfo.init();
+    PortfolioTheme.Validator.init();
+</script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-55938708-9');
+</script>
+<?php if (is_page('projekty')): ?>
+<script>
+    PortfolioTheme.PreviewPlugin.init();
+</script>
+<?php endif; ?>
+
 </body>
 </html>

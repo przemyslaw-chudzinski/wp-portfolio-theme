@@ -1,0 +1,19 @@
+.message {
+
+  color: $color-primary-white;
+  padding: 1rem;
+  font-size: 1.3rem;
+
+  &--success {
+    background-color: $color-success;
+  }
+
+  &--warning {
+    background-color: $color-warning;
+  }
+
+  &--danger {
+    background-color: $color-danger;
+  }
+
+}

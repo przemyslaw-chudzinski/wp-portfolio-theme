@@ -30,4 +30,14 @@
     display: block;
   }
 
+  // Form validation rules
+
+  &__input.has-error {
+    border-color: $color-danger;
+  }
+
+  &__input.has-error ~ span.error-message {
+    color: $color-danger;
+  }
+
 }

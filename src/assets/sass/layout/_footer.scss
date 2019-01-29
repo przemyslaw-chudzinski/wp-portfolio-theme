@@ -3,4 +3,26 @@
   background-color: $color-primary-dark;
   color: $color-primary-white;
   font-size: 1.3rem;
+  position: relative;
+  z-index: 100;
+
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      display: inline-block;
+      color: $color-primary-white;
+      font-size: 1.3rem;
+      transition: all .2s ease-in-out;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    .post-ratings {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
 }

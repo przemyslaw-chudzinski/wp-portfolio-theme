@@ -1,0 +1,32 @@
+.cookies-info {
+  background-color: $color-primary-light;
+  color: $color-primary-white;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 800;
+  display: none;
+
+  &__text {
+    margin: 0;
+  }
+
+  &__link {
+    &:link,
+    &:visited,
+    &:active {
+      color: $color-primary-white;
+      border-bottom: 1px dotted $color-primary-white;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    font-size: 2rem;
+    top: 2rem;
+    right: 2rem;
+  }
+}

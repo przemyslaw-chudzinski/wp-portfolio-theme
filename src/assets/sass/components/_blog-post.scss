@@ -7,6 +7,13 @@
     img {
       width: 100%;
       height: auto;
+      transition: all .2s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
     }
   }
 
@@ -16,6 +23,7 @@
     &:visited {
       display: inline-block;
       text-decoration: none;
+      color: $color-primary-light;
       * {
         margin-bottom: 1rem;
       }

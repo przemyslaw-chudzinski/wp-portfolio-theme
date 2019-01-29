@@ -1,0 +1,12 @@
+.info {
+
+  display: block;
+  padding: 3rem;
+  border: 2px solid;
+  width: 100%;
+  text-align: center;
+
+  &--primary {
+    border-color: $color-primary;
+  }
+}

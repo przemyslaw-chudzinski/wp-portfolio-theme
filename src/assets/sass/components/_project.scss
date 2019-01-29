@@ -1,0 +1,76 @@
+.project {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  height: 20rem;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $color-secondary-dark;
+    opacity: .5;
+    z-index: 100;
+    transition: all .2s ease-in-out;
+  }
+
+  //&__thumbnail {
+  //  overflow: hidden;
+  //  img {
+  //    width: 100%;
+  //  }
+  //}
+
+  &__heading {
+    color: $color-primary-white;
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 200;
+    transition: all .2s ease-in-out;
+    text-align: left;
+  }
+
+  &__heading-desc {
+    opacity: 0;
+    color: $color-primary;
+    transition: all .2s ease-in-out;
+  }
+
+  &__link {
+    display: inline-block;
+    position: absolute;
+    z-index: 200;
+    color: $color-primary;
+    bottom: 2rem;
+    right: -10rem;
+    font-size: 1.3rem;
+    transition: all .2s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      opacity: .8;
+    }
+  }
+
+  &:hover &__heading {
+    top: 2rem
+  }
+
+  &:hover &__heading-desc {
+    opacity: 1;
+  }
+
+  &:hover &__link {
+    right: 1rem;
+  }
+}

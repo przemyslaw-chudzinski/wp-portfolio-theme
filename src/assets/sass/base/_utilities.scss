@@ -1,3 +1,31 @@
 .u-text-center {
   text-align: center !important;
 }
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+.u-section {
+  padding: 5rem 0;
+}
+
+.u-color-primary {
+  color: $color-primary !important;
+}
+
+.u-color-primary-dark {
+  color: $color-primary-dark !important;
+}
+
+.u-mr-1 {
+  margin-right: 1rem !important;
+}
+
+.u-ml-1 {
+  margin-left: 1rem !important;
+}

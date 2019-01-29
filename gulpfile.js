@@ -14,7 +14,7 @@ function buildDev(cb) {
 }
 function buildProd(cb) {
     cb = cb || function () {};
-    parallel('js:prod', 'sass:prod')();
+    parallel('js:prod', 'sass:prod', 'images:copy')();
     cb();
 }
 
