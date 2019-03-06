@@ -11,14 +11,15 @@
 
   &__text {
     margin: 0;
+    color: $color-primary-dark;
   }
 
   &__link {
     &:link,
     &:visited,
     &:active {
-      color: $color-primary-white;
-      border-bottom: 1px dotted $color-primary-white;
+      color: $color-primary-dark;
+      border-bottom: 1px dotted $color-primary-dark;
     }
   }
 

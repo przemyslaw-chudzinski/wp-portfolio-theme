@@ -18,33 +18,33 @@
         </div>
     </div>
     <?php if($prev_post): ?>
-        <a href="<?= get_the_permalink($prev_post->ID) ?>" class="header__arrow header__arrow--left">
+        <a href="<?= get_the_permalink($prev_post->ID) ?>" class="header__arrow header__arrow--left" aria-label="<?= $prev_post->post_title ?>">
             <span class="fa fa-angle-left header__arrow-icon"></span>
             <span class="header__arrow-tooltip header__arrow-tooltip--left"><?= $prev_post->post_title ?></span>
         </a>
     <?php endif; ?>
 
     <?php if ($next_post): ?>
-        <a href="<?= get_the_permalink($next_post->ID) ?>" class="header__arrow header__arrow--right">
+        <a href="<?= get_the_permalink($next_post->ID) ?>" class="header__arrow header__arrow--right" aria-label="<?= $next_post->post_title ?>">
             <span class="fa fa-angle-right header__arrow-icon"></span>
             <span class="header__arrow-tooltip header__arrow-tooltip--right"><?= $next_post->post_title ?></span>
         </a>
     <?php endif ?>
     <div class="header__footer header__footer--left">
-        <a href="<?= get_projects_url() ?>" class="header__footer-link">
+        <a href="<?= get_projects_url() ?>" class="header__footer-link" aria-label="Lista projektów">
             <span class="fa fa-angle-left header__footer-icon"></span>
             Lista projektów
         </a>
     </div>
     <div class="header__footer header__footer--right">
         <?php if (!empty($githubLink)): ?>
-        <a href="<?= get_post_meta(get_the_ID(), 'github_link', true) ?>" target="_blank" class="header__footer-link header__footer-link--outline d-none d-lg-inline-block">
+        <a href="<?= get_post_meta(get_the_ID(), 'github_link', true) ?>" target="_blank" class="header__footer-link header__footer-link--outline d-none d-lg-inline-block" aria-label="Zobacz na github">
             <span class="fa fa-github-alt header__footer-icon"></span>
             Zobacz na github
         </a>
         <?php endif; ?>
         <?php if (!empty($previewLink)): ?>
-        <a href="<?= get_post_meta(get_the_ID(), 'preview_link', true) ?>" target="_blank" class="header__footer-link header__footer-link--outline ml-4 d-none d-lg-inline-block">
+        <a href="<?= get_post_meta(get_the_ID(), 'preview_link', true) ?>" target="_blank" class="header__footer-link header__footer-link--outline ml-4 d-none d-lg-inline-block" aria-label="Zobacz w przeglądarce">
             <span class="fa fa-internet-explorer header__footer-icon"></span>
             Zobacz w przeglądarce
         </a>
@@ -54,10 +54,10 @@
 </header>
 <!-- END: Header -->
 
-<main class="u-section">
+<main class="u-section u-bg-primary-grey">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-lg-8">
+            <div class="col-12">
                 <?= the_content(); ?>
             </div>
         </div>

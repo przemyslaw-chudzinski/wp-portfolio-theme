@@ -1,0 +1,52 @@
+.social-media {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__icon {
+    font-size: 4rem;
+    color: $color-primary-white;
+    display: block;
+    position: absolute;
+    transition: all .3s ease-in-out;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__text {
+    color: $color-primary-white;
+    font-size: 2rem;
+    position: absolute;
+    display: block;
+    transition: all .3s ease-in-out;
+    left: 50%;
+    top: 200%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    height: 10rem;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &:hover &__link {
+    background-color: $color-primary-dark;
+  }
+
+
+  &:hover &__icon {
+    top: -200%;
+  }
+
+  &:hover &__text {
+    top: 50%;
+  }
+
+}

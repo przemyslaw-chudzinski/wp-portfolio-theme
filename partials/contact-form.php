@@ -34,7 +34,7 @@
                                        autocomplete="off"
                                        pattern="^(([^<>()\[\]\\.,;:\s@']+(\.[^<>()\[\]\\.,;:\s@']+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$"
                                        data-form-control
-                                       data-form-pattern="Porszę podać poprawny adres email"
+                                       data-form-pattern="Proszę podać poprawny adres email"
                                        data-form-required="Proszę podać adres email"
                                        required>
                             </div>
@@ -54,6 +54,7 @@
                     <div class="form-group">
                         <label for="message" class="form-group__label">Wiadmość *</label>
                         <textarea rows="7"
+                                  id="message"
                                   class="form-group__input"
                                   autocomplete="off"
                                   name="message"
@@ -62,14 +63,17 @@
                                   required></textarea>
                     </div>
                     <div class="form-group">
-                        <label>
-                            <input data-form-control type="checkbox" required> Wyrażam zgodę na przetwarzanie danych osobowych
+                        <div class="form-group__checkbox">
+                            <input id="confirmRules" data-form-control type="checkbox" required>
+                            <label for="confirmRules" class="form-group__checkbox-label">
+                                Wyrażam zgodę na przetwarzanie danych osobowych
                             zgodnie z ustawą o ochronie danych osobowych w związku z wysyłaniem zapytania przez formularz kontaktowy.
                             Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Zostałem poinformowany, że przysługuje mi prawo dostępu do swoich danych,
                             możliwości ich poprawienia, żądania zaprzestania ich przetwarzania. Administratorem danych osobowych jest osoba prywatna Przemysław Chudziński.
-                        </label>
+                            </label>
+                        </div>
                     </div>
-                    <button id="contactFormBtn" type="button" class="button button__primary">Wyślij</button>
+                    <button id="contactFormBtn" type="button" class="button button--white">Wyślij</button>
                 </form>
             </div>
         </div>

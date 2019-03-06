@@ -1,0 +1,9 @@
+.technologies-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .tech-card {
+    width: 35rem;
+    margin-bottom: 2rem;
+  }
+}

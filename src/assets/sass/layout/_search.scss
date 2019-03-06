@@ -63,6 +63,10 @@
     }
   }
 
+  &__results-list {
+    list-style: none;
+  }
+
   &.open {
     visibility: visible;
     opacity: 1;

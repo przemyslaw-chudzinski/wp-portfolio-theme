@@ -7,11 +7,11 @@
 }
 
 .u-uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 .u-section {
-  padding: 5rem 0;
+  padding: 5rem 0 !important;
 }
 
 .u-color-primary {
@@ -20,6 +20,18 @@
 
 .u-color-primary-dark {
   color: $color-primary-dark !important;
+}
+
+.u-color-primary-grey {
+  color: $color-primary-grey !important;
+}
+
+.u-bg-primary-grey {
+  background-color: $color-primary-grey !important;
+}
+
+.u-bg-primary-light {
+  background-color: $color-primary-light !important;
 }
 
 .u-mr-1 {

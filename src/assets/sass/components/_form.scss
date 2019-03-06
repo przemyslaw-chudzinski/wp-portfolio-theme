@@ -40,4 +40,36 @@
     color: $color-danger;
   }
 
+  &__checkbox {
+    cursor: pointer;
+  }
+
+  &__checkbox input[type=checkbox] {
+    display: none;
+  }
+
+  &__checkbox-label {
+    line-height: 2.2rem;
+    font-size: 1.3rem;
+    &:before {
+      font-family: FontAwesome;
+      content: '';
+      border: 2px solid $color-primary-white;
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &__checkbox input[type=checkbox]:checked ~ &__checkbox-label::before {
+    border-color: $color-primary;
+    content: '\f00c';
+    background-color: $color-primary;
+  }
+
 }

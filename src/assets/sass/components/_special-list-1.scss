@@ -1,0 +1,24 @@
+.special-list-1 {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  li {
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    background: $color-primary-white;
+    padding: 2rem 3rem;
+    width: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+    &:hover {
+      background: $color-primary;
+      color: $color-primary-white;
+    }
+  }
+}

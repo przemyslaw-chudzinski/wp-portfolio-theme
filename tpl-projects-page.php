@@ -38,7 +38,7 @@ $projects = fetch_latest_posts('project', 20);
             <?php if (count($projects) > 0): ?>
                 <?php foreach ($projects as  $project): ?>
                     <!-- Project secondary -->
-                    <a href="<?= get_the_permalink($project->ID) ?>" class="d-block" style="width: 50%">
+                    <a href="<?= get_the_permalink($project->ID) ?>" class="d-block" aria-label="<?= $project->post_title ?>" style="width: 50%">
                         <div class="project-secondary"
                              data-label="<?= $project->post_title ?>"
                              data-background-url="<?= get_the_post_thumbnail_url($project->ID, 'large') ?>"
@@ -46,6 +46,10 @@ $projects = fetch_latest_posts('project', 20);
                              data-preview-desc="<?= get_post_meta($project->ID, 'desc_alternative', true) ?>"
                              data-item-key="<?= $project->ID ?>">
                             <div data-background-overlay class="header__overlay header__overlay--primary"></div>
+                            <div class="project-secondary__mobile-heading d-block d-lg-none">
+                                <div class="project-secondary__mobile-title"><?= $project->post_title ?></div>
+                                <div class="project-secondary__mobile-desc"><?= cut_text_by_chars_length(get_post_meta($project->ID, 'desc_alternative', true), 200) ?></div>
+                            </div>
                         </div>
                     </a>
                     <!-- END: Project secondary -->

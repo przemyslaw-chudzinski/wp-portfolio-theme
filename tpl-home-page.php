@@ -77,7 +77,7 @@
                     <div class="blog-post">
                         <div class="row">
                             <div class="col-lg-4">
-                                <a href="<?= get_the_permalink($post->ID) ?>">
+                                <a href="<?= get_the_permalink($post->ID) ?>" aria-label="<?= $post->post_title ?>">
                                     <figure class="blog-post__thumbnail">
                                         <?= get_the_post_thumbnail($post->ID, 'post-thumbnail') ?>
                                     </figure>
