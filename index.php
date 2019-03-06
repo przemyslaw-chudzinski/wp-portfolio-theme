@@ -1,5 +1,5 @@
 <?= get_header(); ?>
-<!-- Header -->
+<!-- Header edited -->
 <header class="header" data-has-parallax data-background-url="<?= get_static_image_url('blog-header-bg.jpg'); ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
