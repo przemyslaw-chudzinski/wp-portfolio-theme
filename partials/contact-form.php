@@ -73,7 +73,7 @@
                             </label>
                         </div>
                     </div>
-                    <button id="contactFormBtn" type="button" class="button button--white">Wyślij</button>
+                    <button id="contactFormBtn" type="button" class="theme-button theme-button--secondary theme-button--with-icon u-uppercase"><strong>Wyślij wiadomość</strong></button>
                 </form>
             </div>
         </div>

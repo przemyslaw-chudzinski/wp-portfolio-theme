@@ -35,11 +35,15 @@
 
 <main class="u-section">
     <div class="container">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-            <?= get_template_part('partials/blog-post') ?>
-        <?php endwhile; else : ?>
-            <p>Niesty w tym momencie nie ma żadanych wpisów :(</p>
-        <?php endif; ?>
+       <div class="row">
+           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+               <div class="col-12 col-lg-4">
+                   <?= get_template_part('partials/blog-post') ?>
+               </div>
+           <?php endwhile; else : ?>
+               <p>Niesty w tym momencie nie ma żadanych wpisów :(</p>
+           <?php endif; ?>
+       </div>
     </div>
 </main>
 

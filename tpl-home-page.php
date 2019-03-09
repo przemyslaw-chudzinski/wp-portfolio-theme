@@ -56,7 +56,7 @@
                     <?php endif; ?>
                 </div>
 
-                <a href="<?= get_projects_url() ?>" class="projects-section__more-btn theme-button theme-button--primary theme-button--with-radius u-uppercase u-mt-5 u-shadow-7">Zobacz wszystkie projekty</a>
+                <a href="<?= get_projects_url() ?>" class="projects-section__more-btn theme-button theme-button--primary theme-button--with-icon u-uppercase u-mt-5">Zobacz wszystkie projekty</a>
 
             </div>
         </div>
@@ -92,7 +92,7 @@
             <?php endif; ?>
 
             <div class="u-text-center">
-                <a href="<?= get_blog_url() ?>" class="projects-section__more-btn theme-button theme-button--primary theme-button--with-radius u-uppercase u-mt-5 u-shadow-7">Czytaj więcej na blogu</a>
+                <a href="<?= get_blog_url() ?>" class="projects-section__more-btn theme-button theme-button--primary theme-button--with-icon u-uppercase u-mt-5">Czytaj więcej na blogu</a>
             </div>
 
         </div>

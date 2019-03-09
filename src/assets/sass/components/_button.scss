@@ -44,13 +44,17 @@
 // New themes buttons
 
 .theme-button {
-
   &,
   &:link,
+  &:focus,
   &:visited {
     font-size: 1.2rem;
     padding: 2.3rem 3.5rem;
     color: $color-primary-white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
   }
 
   &--primary {
@@ -63,6 +67,21 @@
 
   &--with-radius {
     border-radius: 3000px;
+  }
+
+  &--with-icon {
+    &:after {
+      content: '\f178';
+      font-family: FontAwesome;
+      margin-left: 2rem;
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  &:hover {
+    &:after {
+      margin-left: 4rem;
+    }
   }
 
 }

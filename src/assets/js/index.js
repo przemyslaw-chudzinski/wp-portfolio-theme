@@ -9,3 +9,5 @@ require('./search');
 require('./cookiesInfo');
 require('./validator');
 require('./contactForm');
+require('./stickyNavigation');
+require('./headerParallax');
