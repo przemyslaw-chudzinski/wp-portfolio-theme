@@ -82,36 +82,9 @@
             <?php if(count($posts) > 0): ?>
                 <div class="row">
                     <?php foreach ($posts as $post): ?>
-
-
-
                         <div class="col-12 col-lg-4">
-                            <!-- Blog post -->
-                            <div class="blog-post">
-                                <a href="<?= get_the_permalink($post->ID) ?>" aria-label="<?= $post->post_title ?>">
-                                    <figure class="blog-post__thumbnail">
-                                        <?= get_the_post_thumbnail($post->ID, 'post-thumbnail') ?>
-                                    </figure>
-                                </a>
-                                <div class="blog-post__info">
-                                    <a href="<?= get_the_permalink($post->ID) ?>" class="blog-post__title"><h3><?= $post->post_title ?></h3></a>
-                                    <div class="blog-post__meta">
-                                        <div class="blog-post__meta-author">Autor: <a class="blog-post__link" href="#"><?= get_the_author_meta('display_name', $post->post_author) ?></a></div>
-                                        <div class="blog-post__meta-date">Opublikowano: <?= get_the_date('d-m-Y', $post->ID) ?></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END: Blog post -->
+                            <?= get_template_part('partials/blog-post'); ?>
                         </div>
-
-
-
-
-
-
-
-
-
                     <?php endforeach; ?>
                 </div>
             <?php else: ?>
