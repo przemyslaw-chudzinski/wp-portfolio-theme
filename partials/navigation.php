@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<div class="navigation">
+<div data-nav-sticky class="navigation <?= !is_page_template('tpl-projects-page.php') ? 'navigation--sticky' : null ?> navigation--with-color">
     <div class="container">
         <div class="row">
             <div class="col-8 col-lg-4">

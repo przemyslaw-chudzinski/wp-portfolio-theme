@@ -2,6 +2,8 @@
   height: 7rem;
   display: flex;
   align-items: center;
+  padding: 5rem 0;
+  transition: all .2s ease-in-out;
 
   &__brand {
     display: flex;
@@ -70,7 +72,7 @@
   }
 
   &__list-item.active &__list-link {
-    color: $color-primary;
+    color: $color-secondary;
   }
 
   &__list-link {
@@ -81,7 +83,7 @@
       color: $color-primary-white;
     }
     &:hover {
-      color: $color-primary;
+      color: $color-secondary;
     }
   }
 
@@ -107,4 +109,34 @@
       }
     }
   }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+  }
+
+  &--with-color {
+    background-color: rgba($color-void, .6);
+  }
+
+  &--scrolled {
+    padding: 0;
+    background-color: $color-primary-white;
+    @extend .u-shadow-4;
+  }
+
+  &--scrolled &__list-link {
+    color: $color-void;
+    &:hover {
+      color: $color-secondary !important;
+    }
+  }
+
+  &--scrolled &__brand-meta-description {
+    color: $color-secondary;
+  }
+
 }

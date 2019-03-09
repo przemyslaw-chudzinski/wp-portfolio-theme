@@ -4,6 +4,11 @@
   }
   &__thumbnail {
     overflow: hidden;
+    height: 18rem;
+    background-color: $color-secondary;
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
     img {
       width: 100%;
       height: auto;
@@ -23,19 +28,20 @@
     &:visited {
       display: inline-block;
       text-decoration: none;
-      color: $color-primary-light;
+      color: $color-primary;
+      text-transform: uppercase;
       * {
         margin-bottom: 1rem;
       }
     }
     &:hover {
-      color: $color-primary;
+      color: darken($color-primary, 20%);
     }
   }
 
   &__meta {
-    display: flex;
-    margin-bottom: 1rem;
+    //display: flex;
+    //margin-bottom: 1rem;
     font-size: 1.3rem;
     > div {
       &:not(:last-child) {
@@ -44,12 +50,19 @@
     }
   }
 
+  &__meta-date {
+    span {
+      color: $color-secondary;
+      font-weight: 700;
+    }
+  }
+
   &__link {
     &:link,
     &:visited,
     &:active {
       text-decoration: none;
-      color: $color-primary;
+      color: $color-secondary;
       display: inline-block;
     }
   }

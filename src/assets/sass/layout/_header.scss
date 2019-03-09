@@ -4,7 +4,7 @@
   position: relative;
   background-color: $color-secondary-dark;
   background-size: cover;
-  background-position: center;
+  //background-position: center;
   background-repeat: no-repeat;
 
   > * {
@@ -64,19 +64,19 @@
     height: 80rem;
   }
 
-  .navigation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 300;
-  }
+  //.navigation {
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  right: 0;
+  //  z-index: 300;
+  //}
 
   // Header overlay
   &:after {
     content: '';
     background-color: $color-secondary-dark;
-    opacity: .7;
+    opacity: 0;
     display: block;
     position: absolute;
     top: 0;

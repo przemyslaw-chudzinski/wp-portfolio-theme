@@ -43,11 +43,17 @@
     display: inline-block;
     position: absolute;
     z-index: 200;
-    color: $color-primary;
+    color: $color-secondary;
     bottom: 2rem;
-    right: -10rem;
+    right: -20rem;
     font-size: 1.3rem;
     transition: all .2s ease-in-out;
+    text-transform: uppercase;
+    &:after {
+      content: '\f178';
+      font-family: FontAwesome;
+      margin-left: 1rem;
+    }
   }
 
   &:hover {

@@ -24,13 +24,19 @@
     <section class="blog-section">
         <div class="container">
             <div class="u-text-center">
-                <h2>Wpisy na blogu</h2>
+                <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
+                    <h2 class="theme-heading__text">Wpisy na blogu</h2>
+                </div>
             </div>
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                <?= get_template_part('partials/blog-post') ?>
-            <?php endwhile; else : ?>
-                <p class="label label--primary">Niesty w tym momencie nie ma żadanych wpisów :(</p>
-            <?php endif; ?>
+            <div class="row">
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <div class="col-12 col-lg-4" style="margin-bottom: 5rem;">
+                        <?= get_template_part('partials/blog-post') ?>
+                    </div>
+                <?php endwhile; else : ?>
+                    <p class="label label--primary">Niesty w tym momencie nie ma żadanych wpisów :(</p>
+                <?php endif; ?>
+            </div>
             <?= get_template_part('partials/pagination') ?>
         </div>
     </section>

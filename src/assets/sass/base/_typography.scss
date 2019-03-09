@@ -30,16 +30,15 @@ a {
   &:link,
   &:visited,
   &:active {
-    color: $color-primary;
     display: inline-block;
     text-decoration: none;
     transition: $transition-base;
     font-weight: 700;
     font-size: inherit;
   }
-  &:hover {
-    color: $color-primary-dark;//$color-primary-light;
-  }
+  //&:hover {
+  //  color: $color-primary-dark;//$color-primary-light;
+  //}
 }
 
 ul {

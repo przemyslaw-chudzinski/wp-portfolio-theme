@@ -28,6 +28,8 @@
     PortfolioTheme.Search.init();
     PortfolioTheme.CookiesInfo.init();
     PortfolioTheme.Validator.init();
+    PortfolioTheme.StickyNav.init();
+    // PortfolioTheme.HeaderParallax.init();
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];
