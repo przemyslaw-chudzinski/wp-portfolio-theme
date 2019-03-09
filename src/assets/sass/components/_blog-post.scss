@@ -4,6 +4,7 @@
   }
   &__thumbnail {
     overflow: hidden;
+    height: 18rem;
     img {
       width: 100%;
       height: auto;
@@ -23,19 +24,20 @@
     &:visited {
       display: inline-block;
       text-decoration: none;
-      color: $color-primary-light;
+      color: $color-secondary;
+      text-transform: uppercase;
       * {
         margin-bottom: 1rem;
       }
     }
     &:hover {
-      color: $color-primary;
+      color: darken($color-secondary, 20%);
     }
   }
 
   &__meta {
-    display: flex;
-    margin-bottom: 1rem;
+    //display: flex;
+    //margin-bottom: 1rem;
     font-size: 1.3rem;
     > div {
       &:not(:last-child) {
