@@ -29,7 +29,9 @@
     <section class="projects-section">
         <div class="container">
             <div class="u-text-center">
-                <h2>Projekty nad którymi pracuję</h2>
+                <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
+                    <h2 class="theme-heading__text">Ostatnio dodane projekty</h2>
+                </div>
                 <div class="row">
                     <?php $projects = fetch_latest_posts('project'); ?>
                     <?php if (count($projects) > 0): ?>
@@ -37,7 +39,7 @@
                     <div class="col-lg-4">
                         <a href="<?= get_the_permalink($project->ID); ?>"  class="d-block">
                         <!-- Single project -->
-                            <div class="project" data-background-url="<?= get_the_post_thumbnail_url($project->ID, 'post-thumbnail') ?>">
+                            <div class="project u-shadow-5" data-background-url="<?= get_the_post_thumbnail_url($project->ID, 'post-thumbnail') ?>">
                                     <div class="project__heading">
                                         <h3><?= $project->post_title ?></h3>
                                         <p class="project__heading-desc"><?= $project->post_excerpt ?></p>
@@ -61,7 +63,10 @@
     <section class="blog-section">
         <div class="container">
             <div class="u-text-center">
-                <h2>Ostatnie Wpisy Na Blogu</h2>
+<!--                <h2>Ostatnie Wpisy Na Blogu</h2>-->
+                <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
+                    <h2 class="theme-heading__text">Ostatnie Wpisy Na Blogu</h2>
+                </div>
             </div>
             <div class="blog-section__categories u-text-center">
                 <?php if(count(get_categories()) > 0): ?>

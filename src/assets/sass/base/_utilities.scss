@@ -18,6 +18,10 @@
   color: $color-primary !important;
 }
 
+.u-color-secondary {
+  color: $color-secondary !important;
+}
+
 .u-color-primary-dark {
   color: $color-primary-dark !important;
 }
@@ -40,4 +44,32 @@
 
 .u-ml-1 {
   margin-left: 1rem !important;
+}
+
+.u-shadow-2 {
+  box-shadow: $shadow-2;
+}
+
+.u-shadow-3 {
+  box-shadow: $shadow-3;
+}
+
+.u-shadow-4 {
+  box-shadow: $shadow-4;
+}
+
+.u-shadow-5 {
+  box-shadow: $shadow-5;
+}
+
+.-shadow-6 {
+  box-shadow: $shadow-6;
+}
+
+.u-shadow-7 {
+  box-shadow: $shadow-7;
+}
+
+.u-shadow-8 {
+  box-shadow: $shadow-8;
 }
