@@ -2,7 +2,7 @@
 <?php  have_posts() && the_post(); ?>
 
 <!-- Header -->
-<header class="header" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'large') ?>">
+<header class="header header--with-gradient" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'large') ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div data-background-overlay class="header__overlay"></div>
+<!--    <div data-background-overlay class="header__overlay"></div>-->
 </header>
 <!-- END: Header -->
 

@@ -1,6 +1,6 @@
 <?= get_header(); ?>
 <!-- Header edited -->
-<header class="header" data-has-parallax data-background-url="<?= get_static_image_url('blog-header-bg.jpg'); ?>">
+<header class="header header--with-gradient" data-has-parallax data-background-url="<?= get_static_image_url('blog-header-bg.jpg'); ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">
@@ -16,7 +16,7 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-    <div data-background-overlay class="header__overlay"></div>
+<!--    <div data-background-overlay class="header__overlay"></div>-->
 </header>
 <!-- END: Header -->
 <main>
