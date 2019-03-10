@@ -16,7 +16,7 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-<!--    <div data-background-overlay class="header__overlay"></div>-->
+    <div data-background-overlay class="header__overlay"></div>
 </header>
 <!-- END: Header -->
 <main>

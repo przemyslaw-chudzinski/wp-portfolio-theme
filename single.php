@@ -1,10 +1,12 @@
-<?= get_header(); ?>
 <?php
-    have_posts() && the_post();
+have_posts() && the_post();
 
-    $prev_post = get_previous_post();
-    $next_post = get_next_post();
+$prev_post = get_previous_post();
+$next_post = get_next_post();
 ?>
+
+
+<?= get_header(); ?>
 
 <!-- Header -->
 <header class="header header--with-gradient" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'large') ?>">
@@ -16,6 +18,7 @@
                 <h1 class="header__content-heading"><?= get_the_title() ?></h1>
             </div>
         </div>
+<!--        <div data-background-overlay class="header__overlay"></div>-->
     </div>
 
     <?php if($prev_post): ?>
