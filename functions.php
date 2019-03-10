@@ -51,9 +51,9 @@ add_filter('nav_menu_css_class', 'primary_menu_classes', 1, 3);
  * @return mixed
  * @desc It adds into every anchor element additional classes
  */
-function primary_menu_link_classes ($atts, $item, $args) {
-    if ($args->menu === 'Primary Menu') $atts['class'] = 'navigation__list-link';
-    return $atts;
+function primary_menu_link_classes ($attrs, $item, $args) {
+    if ($args->menu === 'Primary Menu') $attrs['class'] = 'navigation__list-link';
+    return $attrs;
 }
 add_filter('nav_menu_link_attributes', 'primary_menu_link_classes', 10, 3);
 /**

@@ -1,9 +1,11 @@
 <!-- Blog post -->
 <div class="blog-post">
     <a href="<?= get_the_permalink($post->ID) ?>" aria-label="<?= $post->post_title ?>">
-        <figure class="blog-post__thumbnail">
-            <?= get_the_post_thumbnail($post->ID, 'post-thumbnail') ?>
-        </figure>
+        <?php if (has_post_thumbnail()): ?>
+            <figure class="blog-post__thumbnail">
+                <img data-lazy-img data-src="<?= get_the_post_thumbnail_url($post, 'post-thumbnail') ?>" alt="<?= the_post_thumbnail_caption($post) ?>">
+            </figure>
+        <?php endif; ?>
     </a>
     <div class="blog-post__info">
         <a href="<?= get_the_permalink($post->ID) ?>" class="blog-post__title"><h3><?= $post->post_title ?></h3></a>

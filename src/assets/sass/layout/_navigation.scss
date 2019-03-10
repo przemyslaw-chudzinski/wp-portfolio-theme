@@ -65,6 +65,10 @@
   }
 
   &__list-item {
+
+    display: flex;
+    align-items: center;
+
     &:not(:last-child) {
       margin-right: 2rem;
       margin-bottom: 0;
@@ -128,7 +132,7 @@
     @extend .u-shadow-4;
   }
 
-  &--scrolled &__list-link {
+  &--scrolled  &__list-item:not(.cta-nav-button) &__list-link  {
     color: $color-void;
     &:hover {
       color: $color-secondary !important;
@@ -137,6 +141,17 @@
 
   &--scrolled &__brand-meta-description {
     color: $color-secondary;
+  }
+
+  .cta-nav-button a  {
+    @extend .theme-button;
+    @extend .theme-button--secondary;
+    @extend .theme-button--with-icon;
+    @extend .theme-button--medium;
+    @extend .theme-button--with-radius;
+    &:hover {
+      background-color: darken($color-secondary, 10%);
+    }
   }
 
 }
