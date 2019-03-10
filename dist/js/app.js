@@ -3390,7 +3390,7 @@ eval("var ajax = __webpack_require__(/*! ./ajax */ \"./src/assets/js/ajax.js\");
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("PortfolioTheme.StickyNav = function () {\n  var className = 'navigation--scrolled';\n\n  var init = function init() {\n    var navigation = document.querySelector('[data-nav-sticky]');\n    navigation && addEventListener('scroll', function (event) {\n      return _scrollHandler(navigation, event);\n    });\n  };\n\n  var _scrollHandler = function _scrollHandler(navigation, event) {\n    return scrollY === 0 ? navigation.classList.remove(className) : navigation.classList.add(className);\n  };\n\n  return {\n    init: init\n  };\n}();\n\n//# sourceURL=webpack:///./src/assets/js/stickyNavigation.js?");
+eval("PortfolioTheme.StickyNav = function () {\n  var className = 'navigation--scrolled';\n\n  var init = function init() {\n    var navigation = document.querySelector('[data-nav-sticky]');\n    navigation && _setAptlyClass(navigation);\n    navigation && addEventListener('scroll', function (event) {\n      return _setAptlyClass(navigation);\n    });\n  };\n\n  var _setAptlyClass = function _setAptlyClass(navigation) {\n    return scrollY === 0 ? navigation.classList.remove(className) : navigation.classList.add(className);\n  };\n\n  return {\n    init: init\n  };\n}();\n\n//# sourceURL=webpack:///./src/assets/js/stickyNavigation.js?");
 
 /***/ }),
 

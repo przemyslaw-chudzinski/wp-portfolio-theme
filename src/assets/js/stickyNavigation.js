@@ -4,10 +4,11 @@ PortfolioTheme.StickyNav = (function () {
 
     const init = () => {
         const navigation = document.querySelector('[data-nav-sticky]');
-        navigation && addEventListener('scroll', event => _scrollHandler(navigation, event));
+        navigation && _setAptlyClass(navigation);
+        navigation && addEventListener('scroll', event => _setAptlyClass(navigation));
     };
 
-    const _scrollHandler = (navigation, event) => scrollY === 0 ? navigation.classList.remove(className) : navigation.classList.add(className);
+    const _setAptlyClass = navigation => scrollY === 0 ? navigation.classList.remove(className) : navigation.classList.add(className);
 
     return {
         init

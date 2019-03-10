@@ -2517,6 +2517,9 @@ img {
 .u-bg-primary-light {
   background-color: #8187ff !important; }
 
+.u-color-tertiary {
+  background-color: #E7DFDD !important; }
+
 .u-mr-1 {
   margin-right: 1rem !important; }
 
@@ -2750,7 +2753,7 @@ code {
   .button__primary-light:hover {
     color: #2f2fa2; }
 
-.theme-button, .theme-button:link, .theme-button:focus, .theme-button:visited {
+.theme-button, .navigation .cta-nav-button a, .theme-button:link, .navigation .cta-nav-button a:link, .theme-button:focus, .navigation .cta-nav-button a:focus, .theme-button:visited, .navigation .cta-nav-button a:visited {
   font-size: 1.2rem;
   padding: 2.3rem 3.5rem;
   color: #fff;
@@ -2762,19 +2765,25 @@ code {
 .theme-button--primary {
   background-color: #2f2fa2; }
 
-.theme-button--secondary {
+.theme-button--secondary, .navigation .cta-nav-button a {
   background-color: #f64c72; }
 
-.theme-button--with-radius {
+.theme-button--tertiary {
+  background-color: #E7DFDD; }
+
+.theme-button--with-radius, .navigation .cta-nav-button a {
   border-radius: 3000px; }
 
-.theme-button--with-icon:after {
+.theme-button--medium, .navigation .cta-nav-button a {
+  padding: 1.5rem 2.7rem !important; }
+
+.theme-button--with-icon:after, .navigation .cta-nav-button a:after {
   content: '\f178';
   font-family: FontAwesome;
   margin-left: 2rem;
   transition: all .3s ease-in-out; }
 
-.theme-button:hover:after {
+.theme-button:hover:after, .navigation .cta-nav-button a:hover:after {
   margin-left: 4rem; }
 
 .project {
@@ -3272,9 +3281,12 @@ code {
     margin: 0;
     padding: 0;
     font-size: 1.5rem; }
-  .navigation__list-item:not(:last-child) {
-    margin-right: 2rem;
-    margin-bottom: 0; }
+  .navigation__list-item {
+    display: flex;
+    align-items: center; }
+    .navigation__list-item:not(:last-child) {
+      margin-right: 2rem;
+      margin-bottom: 0; }
   .navigation__list-item.active .navigation__list-link {
     color: #f64c72; }
   .navigation__list-link:link, .navigation__list-link:visited {
@@ -3313,12 +3325,14 @@ code {
   .navigation--scrolled {
     padding: 0;
     background-color: #fff; }
-  .navigation--scrolled .navigation__list-link {
+  .navigation--scrolled .navigation__list-item:not(.cta-nav-button) .navigation__list-link {
     color: #0E0B16; }
-    .navigation--scrolled .navigation__list-link:hover {
+    .navigation--scrolled .navigation__list-item:not(.cta-nav-button) .navigation__list-link:hover {
       color: #f64c72 !important; }
   .navigation--scrolled .navigation__brand-meta-description {
     color: #f64c72; }
+  .navigation .cta-nav-button a:hover {
+    background-color: #f41b4c; }
 
 .mobile-menu {
   position: fixed;
