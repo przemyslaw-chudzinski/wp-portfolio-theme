@@ -29,7 +29,7 @@
     PortfolioTheme.CookiesInfo.init();
     PortfolioTheme.Validator.init();
     PortfolioTheme.StickyNav.init();
-    // PortfolioTheme.HeaderParallax.init();
+    PortfolioTheme.ImgLazy.init();
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];

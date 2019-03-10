@@ -11,3 +11,4 @@ require('./validator');
 require('./contactForm');
 require('./stickyNavigation');
 require('./headerParallax');
+require('./imgLazy');

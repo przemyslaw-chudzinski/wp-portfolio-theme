@@ -81,3 +81,8 @@
 .u-shadow-8 {
   box-shadow: $shadow-8;
 }
+
+.u-lazy-image-transition {
+  transition: all .2s ease-in-out;
+  transition-delay: 300ms;
+}
