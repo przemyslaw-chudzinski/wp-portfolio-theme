@@ -3496,6 +3496,10 @@ code {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; }
+  .search__results-empty {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff; }
   .search__results-list-item {
     width: 50%;
     display: flex;
