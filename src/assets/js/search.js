@@ -93,19 +93,50 @@ PortfolioTheme.Search = (function () {
     };
 
     const _renderItems = (items = [], ul, searchResultsContainer, beforeLabel = '') => {
-        items && items.length && items.forEach(item => _renderItem(ul, item.title.rendered, item.link, beforeLabel));
+        items && items.length && items.forEach(item => _renderItem(ul, item));
         searchResultsContainer.appendChild(ul);
     };
 
-    const _renderItem = (ul, title, link = null, beforeLabel = null) => {
+    const _renderItem = (ul, item) => {
+        const {title, link, type, post_author, thumbnail, categories} = item;
         const li = document.createElement('li');
         const anchor = document.createElement('a');
+        const renderedTitle = title ? title.rendered : null;
+        const renderedType = _getRenderedType(type);
+        const thumbnailUrl = thumbnail && thumbnail.medium ? thumbnail.medium : 'http://placehold.it/300x200';
+        // const renderedAuthor = post_author && post_author.name ? post_author.name : null;
+        const renderedCategories = categories && categories.length ? categories.map(item => item.name).join(', ') : '';
 
-        anchor.innerHTML = beforeLabel ? `<span>${beforeLabel} - </span>` + title : title;
+        console.log(item);
+
+        li.classList.add('search__results-list-item');
+
+        anchor.classList.add('search__results-list-item-link');
+        anchor.innerHTML = `
+                <div class="search__result">
+                    <div class="search__result-image" style="background: url('${thumbnailUrl}') no-repeat">
+                     </div>
+                    <div class="search__result-content">
+                        <p>${renderedTitle} </p>
+                        <div>${renderedType} <span class="search__result-category">${renderedCategories}</span></div>
+                    </div>
+                </div>
+        `;
+
+
         link && (anchor.href = link);
 
         li.appendChild(anchor);
         ul.appendChild(li);
+    };
+
+    const _getRenderedType = type => {
+        switch (type) {
+            case 'project': return '<span class="theme-label theme-label--primary">Projekt</span>';
+            case 'page': return '<span class="theme-label theme-label--tertiary">Strona</span>';
+            case 'post': return '<span class="theme-label theme-label--secondary">Wpis</span>';
+            default: 'Wpis';
+        }
     };
 
     const _throttle = (cb, delay = 300) => {

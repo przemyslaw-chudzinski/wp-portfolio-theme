@@ -6,7 +6,7 @@
 
 <?= get_header(); ?>
 <!-- Header -->
-<header data-has-parallax class="header header--big" data-background-url="<?= get_static_image_url('header-bg.jpg'); ?>">
+<header class="header header--big" data-background-url="<?= get_static_image_url('header-bg.jpg'); ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">
