@@ -2,48 +2,63 @@ const ajax = require('./ajax');
 
 PortfolioTheme.Search = (function () {
 
-    // let _httpPostsRequest = null;
-    // let _httpPagesRequest = null;
-    // let _httpProjectsRequest = null;
-
     let _timeoutInterval = null;
 
     const init = () => {
 
-        const _triggers = document.querySelectorAll('[data-search-target]');
+        const _triggers = document.querySelectorAll('[data-search-tpl]');
         _triggers && _triggers.length && [].forEach.call(_triggers, trigger => {
-            const searchTarget = trigger.dataset.searchTarget || null;
-            const searchEl = document.querySelector('[data-search="' + searchTarget + '"]');
-            const closeEl = searchEl.querySelector('[data-search-close]');
-            const input = searchEl.querySelector('[data-search-input]');
-            const searchResultsContainer = searchEl.querySelector('[data-search-results]');
-            const url = searchEl.dataset.searchUrl || null;
-            const preloader = searchEl.querySelector('[data-search-preloader]');
-
-            if (!input) throw new Error('Could not find [data-search-input] element');
-            if (!searchTarget || !searchTarget.length) throw new Error('Attribute [data-search-target] is not specified');
-            if (!searchEl) throw new Error('Could not found [data-search="' + searchEl + '" attribute');
-            if (!url) throw new Error('Wrong value for [data-search-url] attribute');
-
-            trigger && trigger.addEventListener('click', () => _open(searchEl, input));
-            closeEl && closeEl.addEventListener('click', () => _close(searchEl, searchResultsContainer, input));
-            input && input.addEventListener('input', event => _handleChange(event, searchResultsContainer, url, preloader));
-            searchEl && searchEl.addEventListener('keydown', event => _handleKeyDownClose(event, searchEl, searchResultsContainer, input));
+            const searchTarget = trigger.dataset.searchTpl || null;
+            const searchTpl = document.querySelector('script#' + searchTarget);
+            trigger && trigger.addEventListener('click', () => _renderTpl(searchTpl));
         });
     };
 
-    const _open = (item, input) => {
-        item.classList.add('open');
-        input && input.focus();
+    const _renderTpl = tpl => {
+        // Template rendering
+        const div = document.createElement('div');
+        const containerID = 'search-container-' + Date.now();
+        div.id = containerID;
+        div.innerHTML = tpl.innerHTML;
+        document.body.append(div);
+        // --------------------------------------------------------------
+
+       _setup(containerID);
+
     };
 
-    const _close = (item, searchResultsContainer, input) => {
-        item.classList.remove('open');
-        _resetList(searchResultsContainer);
-        input.value = '';
+    const _setup = containerID => {
+        const searchContainer = document.querySelector('#' + containerID);
+        const searchElem = searchContainer.querySelector('[data-search]');
+
+        const closeEl = searchElem.querySelector('[data-search-close]');
+        const input = searchElem.querySelector('[data-search-input]');
+        const searchResultsContainer = searchElem.querySelector('[data-search-results]');
+        const url = searchElem.dataset.searchUrl || null;
+        const preloader = searchElem.querySelector('[data-search-preloader]');
+
+        if (!input) throw new Error('Could not find [data-search-input] element');
+        if (!searchElem) throw new Error('Could not found [data-search="' + searchElem + '" attribute');
+        if (!url) throw new Error('Wrong value for [data-search-url] attribute');
+
+        closeEl && closeEl.addEventListener('click', () => _destroy(searchElem, searchContainer), true);
+        input && input.addEventListener('input', event => _handleChange(event, searchResultsContainer, url, preloader), true);
+        searchElem && searchElem.addEventListener('keydown', event => _handleEscapeKeyDown(searchElem, searchContainer, event), true);
+        searchElem.addEventListener('transitionend', () => input && input.focus(), true);
+
+        setTimeout(() => {
+            searchElem.classList.add('open');
+            input.focus();
+        });
+
     };
 
-    const _handleKeyDownClose = (event, item, searchResultsContainer, input) => event.key === 'Escape' && _close(item, searchResultsContainer, input);
+    const _destroy = (searchElem, searchContainer) => {
+        searchElem.classList.remove('open');
+        searchElem.addEventListener('transitionend', () => searchContainer && searchContainer.remove(), true);
+    };
+
+    const _handleEscapeKeyDown = (searchElem, searchContainer, event) => event && event.key === 'Escape' && _destroy(searchElem, searchContainer);
 
     const _handleChange = (event, searchResultsContainer, url, preloader) => {
         const searchPhrase = event.target.value.toLowerCase();
@@ -60,6 +75,7 @@ PortfolioTheme.Search = (function () {
                 preloader.style.display = 'none';
 
                 _resetList(searchResultsContainer);
+                _clearNoItems(searchResultsContainer);
 
                 const ul = document.createElement('ul');
                 const ulAttr = document.createAttribute('data-search-list');
@@ -69,7 +85,7 @@ PortfolioTheme.Search = (function () {
                 const flatted = values && values.length && values.reduce((prev, curr) => prev.concat(curr));
 
                 if (!flatted || !flatted.length) {
-                    _renderItem(ul, 'Brak rezultatów dla tego wyszukiwania');
+                    _renderNoItems(searchResultsContainer);
                     searchResultsContainer.appendChild(ul);
                 } else _renderItems(flatted, ul, searchResultsContainer);
 
@@ -98,16 +114,14 @@ PortfolioTheme.Search = (function () {
     };
 
     const _renderItem = (ul, item) => {
-        const {title, link, type, post_author, thumbnail, categories} = item;
+        const {title, link, type, thumbnail, categories} = item;
         const li = document.createElement('li');
         const anchor = document.createElement('a');
         const renderedTitle = title ? title.rendered : null;
         const renderedType = _getRenderedType(type);
         const thumbnailUrl = thumbnail && thumbnail.medium ? thumbnail.medium : 'http://placehold.it/300x200';
-        // const renderedAuthor = post_author && post_author.name ? post_author.name : null;
         const renderedCategories = categories && categories.length ? categories.map(item => item.name).join(', ') : '';
 
-        console.log(item);
 
         li.classList.add('search__results-list-item');
 
@@ -128,6 +142,18 @@ PortfolioTheme.Search = (function () {
 
         li.appendChild(anchor);
         ul.appendChild(li);
+    };
+
+    const _renderNoItems = (searchResultsContainer, text = 'Brak rezultatów do wyświetlenia') => {
+        const div = document.createElement('div');
+        div.innerText = text;
+        div.classList.add('search__results-empty');
+        searchResultsContainer.appendChild(div);
+    };
+
+    const _clearNoItems = searchResultsContainer => {
+        const noItemsElem = searchResultsContainer.querySelector('.search__results-empty');
+        noItemsElem && noItemsElem.remove();
     };
 
     const _getRenderedType = type => {

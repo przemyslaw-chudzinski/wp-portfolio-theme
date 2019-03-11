@@ -104,6 +104,12 @@
     justify-content: space-between;
   }
 
+  &__results-empty {
+    text-align: center;
+    font-size: 2rem;
+    color: $color-primary-white;
+  }
+
   &__results-list-item {
     width: 50%;
     @include vertical-center-flex;

@@ -30,7 +30,7 @@
         </div>
     </div>
     <!-- Search btn -->
-    <span data-search-target="search" class="fa fa-search search-btn d-none d-lg-block navigation__search-trigger"></span>
+    <span data-search-tpl="searchTpl" class="fa fa-search search-btn d-none d-lg-block navigation__search-trigger"></span>
     <!-- END: Search btn -->
 </div>
 <!-- END: Navigation -->
