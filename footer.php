@@ -13,6 +13,13 @@
         </div>
     </div>
 </footer>
+
+<!-- Scroll to top -->
+<a id="scrollToTop" href="javascript:void(0)" class="scroll-to-top theme-button theme-button--secondary">
+    <span class="fa fa-chevron-up"></span>
+</a>
+<!-- END: Scroll to top -->
+
 <!-- END: Footer -->
 <?= get_template_part('partials/search'); ?>
 <?= get_template_part('partials/mobile-navigation'); ?>
@@ -30,6 +37,7 @@
     PortfolioTheme.Validator.init();
     PortfolioTheme.StickyNav.init();
     PortfolioTheme.ImgLazy.init();
+    PortfolioTheme.ScrollToTop.init();
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];

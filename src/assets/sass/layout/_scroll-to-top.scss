@@ -1,0 +1,16 @@
+.scroll-to-top {
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  z-index: 100;
+  padding: 0 !important;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: flex !important;
+  @include center-all-flex;
+  box-shadow: 0 11px 26px 0 rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease-in-out;
+}

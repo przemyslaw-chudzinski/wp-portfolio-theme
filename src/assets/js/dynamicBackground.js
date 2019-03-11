@@ -1,11 +1,11 @@
-const {preloadImage, isInViewPortY, throttle} = require('./helpers');
+const {preloadImage, isInViewPortY} = require('./helpers');
 
 PortfolioTheme.DynamicBackground = (function () {
 
     const init = () => {
         const elements = document.querySelectorAll('[data-background-url]');
         elements && elements.length && _loadImages(elements);
-        elements && elements.length && addEventListener('scroll', () => throttle(_loadImages)(elements));
+        elements && elements.length && addEventListener('scroll', () => _loadImages(elements));
     };
 
     const _loadImage = async element => {
