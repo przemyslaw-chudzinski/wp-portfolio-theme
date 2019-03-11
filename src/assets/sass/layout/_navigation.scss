@@ -154,4 +154,9 @@
     }
   }
 
+  &__search-trigger {
+    @include vertical-center;
+    right: 2.5rem;
+  }
+
 }

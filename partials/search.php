@@ -15,6 +15,6 @@
 <!-- ENd: Search -->
 
 <!-- Search btn -->
-<span data-search-target="search" class="fa fa-search search-btn d-none d-lg-block"></span>
+<!--<span data-search-target="search" class="fa fa-search search-btn d-none d-lg-block"></span>-->
 <!-- END: Search btn -->
 

@@ -2887,20 +2887,17 @@ code {
     margin-top: 1rem; }
 
 .search-btn {
-  position: fixed;
   z-index: 800;
   display: inline-block;
-  top: 0;
-  right: 0;
-  color: #fff;
-  background-color: rgba(47, 47, 162, 0.6);
-  padding: 2rem;
+  color: #f64c72;
+  background-color: #E7DFDD;
+  padding: 1.5rem;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
   transition: all .2s ease-in-out; }
   .search-btn:hover {
-    background-color: #fff;
-    color: #2f2fa2; }
+    background-color: #2f2fa2; }
 
 .cookies-info {
   background-color: #8187ff;
@@ -3337,6 +3334,11 @@ code {
     color: #f64c72; }
   .navigation .cta-nav-button a:hover {
     background-color: #f41b4c; }
+  .navigation__search-trigger {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5rem; }
 
 .mobile-menu {
   position: fixed;
