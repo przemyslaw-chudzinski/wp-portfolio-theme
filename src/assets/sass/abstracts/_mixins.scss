@@ -1,7 +1,13 @@
+// alignment elements
 @mixin vertical-center {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@mixin vertical-center-flex {
+  display: flex;
+  align-items: center;
 }
 
 @mixin horizontal-center {
@@ -10,8 +16,23 @@
   transform: translateX(-50%);
 }
 
+@mixin horizontal-center-flex {
+  display: flex;
+  justify-content: center;
+}
+
 @mixin center-all-flex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+// ------------------------------------------------------------------
+
+// Images
+@mixin make-responsive {
+  width: 100%;
+  height: auto;
+}
+// ------------------------------------------------------------------
+

@@ -3,7 +3,12 @@
 
     <span data-search-close class="fa fa-close search__close-btn"></span>
 
-    <input data-search-input type="text" class="search__input" placeholder="Zacznij pisać">
+    <div class="input-group__wrapper">
+        <div class="input-group__position-container">
+            <input data-search-input type="text" class="search__input" placeholder="Zacznij pisać">
+            <span class="fa fa-search input-group__icon"></span>
+        </div>
+    </div>
 
     <div data-search-results class="search__results"></div>
 

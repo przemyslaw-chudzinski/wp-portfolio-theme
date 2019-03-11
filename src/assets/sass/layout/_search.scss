@@ -12,7 +12,7 @@
   transition: all .2s ease-in-out;
 
   &__close-btn {
-    color: $color-primary-white;
+    color: $color-secondary;
     display: inline-block;
     position: fixed;
     top: 0;
@@ -22,13 +22,41 @@
     padding: 2rem;
   }
 
+  .input-group {
+
+    &__wrapper {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include center-all-flex;
+
+      @include media-breakpoint-up('lg') {
+        width: 40%;
+      }
+
+      span.fa {
+        color: $color-secondary;
+      }
+    }
+
+    &__position-container {
+      width: 80%;
+      position: relative;
+    }
+
+    &__icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 2rem;
+      @include vertical-center;
+    }
+  }
+
   &__input {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
     display: block;
-    width: 80%;
     outline: none;
     box-shadow: none;
     background: transparent;
@@ -42,29 +70,49 @@
       border-bottom: 2px solid $color-primary;
     }
 
-    @include media-breakpoint-up('lg') {
-      width: 40%;
-    }
   }
 
   &__results {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
+
+    p {
+      transition: all .2s ease-in-out;
+    }
+
     a {
       color: $color-primary-white;
       font-size: 2rem;
       transition: all .2s ease-in-out;
       &:hover {
         transform: translateX(.2rem);
-        color: $color-primary;
+        //color: $color-primary;
+        p {
+          color: $color-secondary;
+        }
       }
     }
   }
 
   &__results-list {
     list-style: none;
+    width: 100rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__results-list-item {
+    width: 50%;
+    @include vertical-center-flex;
+    height: 13rem;
+    margin-bottom: 0 !important;
+  }
+
+  &__results-list-item-link {
+    width: 100%;
   }
 
   &.open {
@@ -78,6 +126,34 @@
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+  }
+
+  &__result {
+    @include vertical-center-flex;
+  }
+
+  &__result-image {
+    overflow: hidden;
+    width: 12rem;
+    height: 9rem;
+    background-position: center;
+    background-size: cover !important;
+    img {
+      @include make-responsive;
+    }
+  }
+
+  &__result-content {
+    padding: 0 2rem;
+
+    .theme-label {
+      font-size: 1.2rem;
+    }
+
+  }
+
+  &__result-category {
+    font-size: 1.2rem;
   }
 
 }
