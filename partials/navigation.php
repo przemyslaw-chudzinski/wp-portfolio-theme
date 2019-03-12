@@ -29,8 +29,19 @@
             </div>
         </div>
     </div>
+
     <!-- Search btn -->
     <span data-search-tpl="searchTpl" class="fa fa-search search-btn d-none d-lg-block navigation__search-trigger"></span>
     <!-- END: Search btn -->
+
+    <!-- Social media icons -->
+    <ul class="social-media-icons">
+        <li><span>Obseruj mnie na: </span></li>
+        <li><a href=""><span class="fa fa-linkedin"></span></a></li>
+        <li><a href=""><span class="fa fa-facebook"></span></a></li>
+        <li><a href=""><span class="fa fa-instagram"></span></a></li>
+    </ul>
+    <!-- END: Social media icons -->
+
 </div>
 <!-- END: Navigation -->

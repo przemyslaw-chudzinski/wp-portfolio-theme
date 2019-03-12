@@ -6,18 +6,15 @@
 
 <?= get_header(); ?>
 <!-- Header -->
-<header class="header header--big" data-background-url="<?= get_static_image_url('header-bg.jpg'); ?>">
+<header class="header header--big header--with-overlay header--center-background home-header" data-background-url="<?= get_static_image_url('header-bg.jpg'); ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <figure class="header__content-image">
-                    <img src="<?= get_static_image_url('avatar.jpg') ?>" alt="">
-                </figure>
                 <h1 class="header__content-heading">Przemysław Chudziński</h1>
-                <p class="header__content-desc">
-                    <span class="u-color-primary u-uppercase">Webdeveloper oraz Pasjonat nowych technologii</span>
-                </p>
+                <div class="header__content-desc">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor nisi perspiciatis tempore! Deserunt dolore molestias mollitia, sapiente ullam ut voluptatem
+                </div>
             </div>
         </div>
     </div>

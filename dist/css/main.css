@@ -3095,7 +3095,7 @@ code {
     display: block;
     transition: all .3s ease-in-out;
     position: absolute;
-    top: 6rem; }
+    top: 150%; }
 
 .theme-heading--with-underline-centered .theme-heading__text:after {
   left: 50%;
@@ -3108,7 +3108,7 @@ code {
 .theme-heading:hover .theme-heading__text::after {
   width: 100%;
   height: 10px;
-  top: 3.1rem; }
+  top: 70%; }
 
 .header {
   height: 40rem;
@@ -3164,6 +3164,24 @@ code {
     left: 0;
     bottom: 0;
     z-index: 100; }
+  .header--with-overlay {
+    position: relative; }
+    .header--with-overlay:after {
+      content: '';
+      background-color: #0E0B16;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      opacity: .3;
+      transition: all .2s ease-in-out; }
+    .header--with-overlay:hover:after {
+      opacity: .5; }
+  .header--center-background {
+    background-position: center; }
   .header__footer {
     position: absolute;
     bottom: 3rem;
@@ -3344,6 +3362,12 @@ code {
       color: #f64c72 !important; }
   .navigation--scrolled .navigation__brand-meta-description {
     color: #f64c72; }
+  .navigation--scrolled .social-media-icons li:first-child {
+    color: #f64c72; }
+  .navigation--scrolled .social-media-icons li a {
+    color: #2f2fa2; }
+    .navigation--scrolled .social-media-icons li a:hover {
+      color: #f64c72; }
   .navigation .cta-nav-button a:hover {
     background-color: #f41b4c; }
   .navigation__search-trigger {
@@ -3566,6 +3590,29 @@ code {
   visibility: hidden;
   transition: all .3s ease-in-out; }
 
+.social-media-icons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; }
+  .social-media-icons li {
+    margin: 0 !important; }
+    .social-media-icons li:not(:last-child) {
+      margin-right: 1rem !important; }
+    .social-media-icons li:first-child {
+      font-weight: 700;
+      color: #E7DFDD; }
+    .social-media-icons li a {
+      display: inline-block;
+      color: #f64c72; }
+      .social-media-icons li a:hover {
+        color: #2f2fa2; }
+
 .blog-section {
   padding: 5rem 0; }
   .blog-section__categories {
@@ -3581,6 +3628,14 @@ code {
     @media (min-width: 992px) {
       .projects-section .project {
         margin-bottom: 0; } }
+
+.home-header .header__content-heading {
+  text-transform: uppercase;
+  font-size: 6rem; }
+
+.home-header .header__content-desc {
+  text-transform: uppercase;
+  font-size: 1.5rem; }
 
 .posts-list {
   padding: 5rem 0; }

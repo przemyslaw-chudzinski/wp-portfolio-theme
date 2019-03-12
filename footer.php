@@ -1,4 +1,3 @@
-<?= !is_project_page() && get_template_part('partials/social-media'); ?>
 <?= get_template_part('partials/contact-form'); ?>
 <!-- Footer -->
 <footer class="footer">

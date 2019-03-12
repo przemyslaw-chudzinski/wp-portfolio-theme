@@ -143,6 +143,20 @@
     color: $color-secondary;
   }
 
+  &--scrolled .social-media-icons {
+    li {
+      &:first-child {
+        color: $color-secondary;
+      }
+      a {
+        color: $color-primary;
+        &:hover {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+
   .cta-nav-button a  {
     @extend .theme-button;
     @extend .theme-button--secondary;
