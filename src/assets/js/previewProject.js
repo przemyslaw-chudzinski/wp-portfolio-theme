@@ -1,4 +1,4 @@
-const helpers = require('./helpers');
+const {preloadImage} = require('./helpers');
 
 PortfolioTheme.PreviewPlugin = (function () {
 
@@ -61,7 +61,7 @@ PortfolioTheme.PreviewPlugin = (function () {
     };
 
     const _showContentAtPreviewContainer = ({previewUrl, label, previewDesc}) => {
-        helpers.preloadImage(previewUrl)
+        preloadImage(previewUrl)
             .then(url => {
                 _timeoutInterval = setTimeout(() => {
                     _setPreviewImage(url);
