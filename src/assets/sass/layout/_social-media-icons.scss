@@ -1,0 +1,30 @@
+.social-media-icons {
+  @include vertical-center;
+  left: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    margin: 0 !important;
+    &:not(:last-child) {
+      margin-right: 1rem !important;
+    }
+
+    &:first-child {
+      font-weight: 700;
+      color: $color-tertiary;
+    }
+
+
+
+    a {
+      display: inline-block;
+      color: $color-secondary;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
