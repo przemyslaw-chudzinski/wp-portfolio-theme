@@ -3319,7 +3319,7 @@ code {
       margin-right: 2rem;
       margin-bottom: 0; }
   .navigation__list-item.active .navigation__list-link {
-    color: #f64c72; }
+    color: #f64c72 !important; }
   .navigation__list-link:link, .navigation__list-link:visited {
     display: inline-block;
     text-decoration: none;
@@ -3368,6 +3368,8 @@ code {
     color: #2f2fa2; }
     .navigation--scrolled .social-media-icons li a:hover {
       color: #f64c72; }
+  .navigation__list-item.active.cta-nav-button .navigation__list-link {
+    color: #2f2fa2 !important; }
   .navigation .cta-nav-button a:hover {
     background-color: #f41b4c; }
   .navigation__search-trigger {

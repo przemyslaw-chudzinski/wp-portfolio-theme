@@ -3368,7 +3368,7 @@ eval("PortfolioTheme.MobileMenu = function () {\n  var init = function init() {\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("PortfolioTheme.Parallax = function () {\n  var init = function init() {\n    var header = document.querySelector('header[data-has-parallax]');\n    header && addEventListener('scroll', function (event) {\n      return _scrollHandler(header, event);\n    });\n  };\n\n  var _scrollHandler = function _scrollHandler(header) {\n    return header.style.backgroundPositionY = -1 * scrollY * 0.3 + 'px';\n  };\n\n  return {\n    init: init\n  };\n}();\n\n//# sourceURL=webpack:///./src/assets/js/parallax.js?");
+eval("PortfolioTheme.Parallax = function () {\n  var init = function init() {\n    var header = document.querySelector('header[data-has-parallax]');\n    header && (header.style.backgroundAttachment = 'fixed');\n    header && addEventListener('scroll', function (event) {\n      return _scrollHandler(header, event);\n    });\n  };\n\n  var _scrollHandler = function _scrollHandler(header) {\n    var userSpeed = header.dataset.parallaxSpeed ? parseFloat(header.dataset.parallaxSpeed) : null;\n    var speed = userSpeed || 0.5;\n    header.style.backgroundPositionY = -1 * scrollY * speed + 'px';\n  };\n\n  return {\n    init: init\n  };\n}();\n\n//# sourceURL=webpack:///./src/assets/js/parallax.js?");
 
 /***/ }),
 
