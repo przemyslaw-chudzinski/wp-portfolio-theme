@@ -36,7 +36,7 @@
 
     <!-- Social media icons -->
     <ul class="social-media-icons">
-        <li><span>Obseruj mnie na: </span></li>
+        <li><span>Obserwuj mnie na: </span></li>
         <li><a href=""><span class="fa fa-linkedin"></span></a></li>
         <li><a href=""><span class="fa fa-facebook"></span></a></li>
         <li><a href=""><span class="fa fa-instagram"></span></a></li>

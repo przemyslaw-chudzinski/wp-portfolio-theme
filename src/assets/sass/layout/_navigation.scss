@@ -76,7 +76,7 @@
   }
 
   &__list-item.active &__list-link {
-    color: $color-secondary;
+    color: $color-secondary !important;
   }
 
   &__list-link {
@@ -155,6 +155,10 @@
         }
       }
     }
+  }
+
+  &__list-item.active.cta-nav-button &__list-link {
+    color: $color-primary !important;
   }
 
   .cta-nav-button a  {
