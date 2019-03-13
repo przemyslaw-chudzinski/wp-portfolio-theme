@@ -5,11 +5,11 @@
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <h1 class="header__content-heading">Blog</h1>
+                <h1 class="header__content-heading a-animated a-fadeInUp">Blog</h1>
             </div>
         </div>
     </div>
-    <div class="header__footer header__footer--right">
+    <div class="header__footer header__footer--right a-animated a-fadeInRight a-delay-1">
         <?php if(count(get_categories()) > 0): ?>
             <?php foreach (get_categories() as $category): ?>
                 <a href="<?= get_category_link($category->term_id) ?>" class="header__footer-link u-ml-1"><?= $category->name ?></a>

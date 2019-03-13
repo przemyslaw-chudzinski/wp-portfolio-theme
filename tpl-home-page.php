@@ -11,10 +11,11 @@
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <h1 class="header__content-heading">Przemysław Chudziński</h1>
-                <div class="header__content-desc">
+                <h1 class="header__content-heading a-animated a-fadeInLeft">Przemysław Chudziński</h1>
+                <div class="header__content-desc a-animated a-fadeInRight u-color-tertiary">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor nisi perspiciatis tempore! Deserunt dolore molestias mollitia, sapiente ullam ut voluptatem
                 </div>
+                <a href="<?= get_about_url(); ?>" class="theme-button theme-button--primary theme-button--with-icon theme-button--with-radius u-uppercase home-header__btn a-animated a-fadeInUp a-delay-1">Poznajmy się lepiej</a>
             </div>
         </div>
     </div>

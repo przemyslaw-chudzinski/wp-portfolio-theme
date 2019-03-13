@@ -2511,14 +2511,17 @@ img {
 .u-color-primary-grey {
   color: #f5f5f5 !important; }
 
+.u-color-tertiary {
+  color: #E7DFDD !important; }
+
 .u-bg-primary-grey {
   background-color: #f5f5f5 !important; }
 
 .u-bg-primary-light {
   background-color: #8187ff !important; }
 
-.u-color-tertiary {
-  background-color: #E7DFDD !important; }
+.u-bg-tertiary {
+  background-color: #E7DFDD; }
 
 .u-mr-1 {
   margin-right: 1rem !important; }
@@ -2559,6 +2562,71 @@ img {
     transform: rotate(0); }
   to {
     transform: rotate(360deg); } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+.a-fadeInLeft {
+  animation-name: fadeInLeft; }
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+.a-fadeInRight {
+  animation-name: fadeInRight; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
+
+.a-fadeInDown {
+  animation-name: fadeInDown; }
+
+.a-fadeInUp {
+  animation-name: fadeInUp; }
+
+.a-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.a-delay-1 {
+  animation-delay: 1s; }
+
+.a-delay-2 {
+  animation-delay: 2s; }
+
+.a-delay-3 {
+  animation-delay: 3s; }
 
 body {
   box-sizing: border-box;
@@ -2912,27 +2980,16 @@ code {
     background-color: #2f2fa2; }
 
 .cookies-info {
-  background-color: #8187ff;
-  color: #fff;
-  padding: 1rem;
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 2.5rem;
+  bottom: 2.5rem;
   z-index: 800;
-  display: none; }
-  .cookies-info__text {
-    margin: 0;
-    color: #000; }
+  width: 30%;
+  font-size: 1.3rem; }
   .cookies-info__link:link, .cookies-info__link:visited, .cookies-info__link:active {
-    color: #000;
-    border-bottom: 1px dotted #000; }
-  .cookies-info__close {
-    cursor: pointer;
-    position: absolute;
-    font-size: 2rem;
-    top: 2rem;
-    right: 2rem; }
+    color: #f64c72; }
+  .cookies-info__link:hover {
+    color: #d10b37; }
 
 .info {
   display: block;
@@ -3003,6 +3060,28 @@ code {
 
 .card {
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12); }
+
+.theme-card {
+  background-color: #fff;
+  border-radius: 3px; }
+  .theme-card__body {
+    padding: 2rem; }
+  .theme-card__footer {
+    padding: 0 2rem 2rem 2rem; }
+  .theme-card--primary {
+    border-color: #2f2fa2 #2f2fa2 #2f2fa2 #2f2fa2 !important; }
+  .theme-card--secondary {
+    border-color: #f64c72 #f64c72 #f64c72 #f64c72 !important; }
+  .theme-card--tertiary {
+    border-color: #E7DFDD #E7DFDD #E7DFDD #E7DFDD !important; }
+  .theme-card--with-border-left {
+    border-left: 4px solid transparent; }
+  .theme-card--with-border-right {
+    border-right: 4px solid transparent; }
+  .theme-card--with-border-bottom {
+    border-bottom: 4px solid transparent; }
+  .theme-card--with-border-top {
+    border-top: 4px solid transparent; }
 
 .special-list-1 {
   list-style: none;
@@ -3178,8 +3257,6 @@ code {
       z-index: 40;
       opacity: .3;
       transition: all .2s ease-in-out; }
-    .header--with-overlay:hover:after {
-      opacity: .5; }
   .header--center-background {
     background-position: center; }
   .header__footer {
@@ -3270,7 +3347,7 @@ code {
   display: flex;
   align-items: center;
   padding: 5rem 0;
-  transition: all .2s ease-in-out; }
+  transition: all .5s ease-in-out; }
   .navigation__brand {
     display: flex;
     align-items: center;
@@ -3631,13 +3708,28 @@ code {
       .projects-section .project {
         margin-bottom: 0; } }
 
+.home-header .header__content-text {
+  text-align: center; }
+
 .home-header .header__content-heading {
   text-transform: uppercase;
-  font-size: 6rem; }
+  font-size: 6rem;
+  margin-bottom: 4rem; }
+  .home-header .header__content-heading:after {
+    content: '';
+    display: block;
+    width: 10%;
+    height: 5px;
+    background-color: #f64c72;
+    margin: 3rem auto auto auto; }
 
 .home-header .header__content-desc {
   text-transform: uppercase;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  font-weight: 700; }
+
+.home-header__btn {
+  margin-top: 3rem; }
 
 .posts-list {
   padding: 5rem 0; }
