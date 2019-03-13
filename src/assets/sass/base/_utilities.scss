@@ -30,6 +30,10 @@
   color: $color-primary-grey !important;
 }
 
+.u-color-tertiary {
+  color: $color-tertiary !important;
+}
+
 .u-bg-primary-grey {
   background-color: $color-primary-grey !important;
 }
@@ -38,8 +42,8 @@
   background-color: $color-primary-light !important;
 }
 
-.u-color-tertiary {
-  background-color: $color-tertiary !important;
+.u-bg-tertiary {
+  background-color: $color-tertiary;
 }
 
 .u-mr-1 {

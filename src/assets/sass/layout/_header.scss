@@ -101,11 +101,11 @@
       opacity: .3;
       transition: all .2s ease-in-out;
     }
-    &:hover {
-      &:after {
-        opacity: .5;
-      }
-    }
+    //&:hover {
+    //  &:after {
+    //    opacity: .5;
+    //  }
+    //}
   }
 
   &--center-background {

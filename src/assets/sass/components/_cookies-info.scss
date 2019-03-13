@@ -1,33 +1,19 @@
 .cookies-info {
-  background-color: $color-primary-light;
-  color: $color-primary-white;
-  padding: 1rem;
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 2.5rem;
+  bottom: 2.5rem;
   z-index: 800;
-  display: none;
-
-  &__text {
-    margin: 0;
-    color: $color-primary-dark;
-  }
+  width: 30%;
+  font-size: 1.3rem;
 
   &__link {
     &:link,
     &:visited,
     &:active {
-      color: $color-primary-dark;
-      border-bottom: 1px dotted $color-primary-dark;
+      color: $color-secondary;
     }
-  }
-
-  &__close {
-    cursor: pointer;
-    position: absolute;
-    font-size: 2rem;
-    top: 2rem;
-    right: 2rem;
+    &:hover {
+      color: darken($color-secondary, 20%);
+    }
   }
 }

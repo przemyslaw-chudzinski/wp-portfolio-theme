@@ -1,3 +1,50 @@
 .card {
   box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
 }
+
+
+// Theme card
+$theme-card-border: 4px solid transparent;
+
+.theme-card {
+
+  background-color: $color-primary-white;
+  border-radius: 3px;
+
+  &__body {
+    padding: 2rem;
+  }
+
+  &__footer {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  &--primary {
+    border-color: $color-primary $color-primary $color-primary $color-primary !important;
+  }
+
+  &--secondary {
+    border-color: $color-secondary $color-secondary $color-secondary $color-secondary !important;
+  }
+
+  &--tertiary {
+    border-color: $color-tertiary $color-tertiary $color-tertiary $color-tertiary !important;
+  }
+
+  &--with-border-left {
+    border-left: $theme-card-border;
+  }
+
+  &--with-border-right {
+    border-right: $theme-card-border;
+  }
+
+  &--with-border-bottom {
+    border-bottom: $theme-card-border;
+  }
+
+  &--with-border-top {
+    border-top: $theme-card-border;
+  }
+
+}

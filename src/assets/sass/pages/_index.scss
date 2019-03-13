@@ -21,14 +21,32 @@
 
 .home-header {
 
+  .header__content-text {
+    text-align: center;
+  }
+
   .header__content-heading {
     text-transform: uppercase;
     font-size: 6rem;
+    margin-bottom: 4rem;
+    &:after {
+      content: '';
+      display: block;
+      width: 10%;
+      height: 5px;
+      background-color: $color-secondary;
+      margin: 3rem auto auto auto;
+    }
   }
 
   .header__content-desc {
     text-transform: uppercase;
     font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__btn {
+    margin-top: 3rem;
   }
 
 }

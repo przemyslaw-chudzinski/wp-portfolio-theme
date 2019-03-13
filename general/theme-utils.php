@@ -22,25 +22,30 @@ function cut_text_by_chars_length($text, $length = 600) {
 }
 
 /**
- * @param string $name
  * @return mixed
  */
-function get_blog_url($name = 'blog') {
-    return get_site_url(null, $name);
+function get_blog_url() {
+    return get_site_url(null, 'blog');
 }
 
 /**
- * @param string $name
  * @return mixed
  */
-function get_projects_url($name = 'projekty') {
-    return get_site_url(null, $name);
+function get_projects_url() {
+    return get_site_url(null, 'projekty');
 }
 
 /**
- * @param string $name
  * @return mixed
  */
-function is_project_page($name = 'projekty') {
-    return is_page($name);
+function get_about_url()
+{
+    return get_site_url(null, 'o-mnie');
+}
+
+/**
+ * @return mixed
+ */
+function is_project_page() {
+    return is_page('projekty');
 }
