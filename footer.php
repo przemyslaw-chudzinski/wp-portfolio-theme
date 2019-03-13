@@ -1,4 +1,12 @@
-<?= get_template_part('partials/contact-form'); ?>
+<!-- Contact form section -->
+<section class="contact-form-section u-section">
+    <div class="container">
+        <?= get_template_part('partials/contact-form'); ?>
+    </div>
+</section>
+
+<!-- END: Contact form section -->
+
 <!-- Footer -->
 <footer class="footer">
     <div class="container">
@@ -20,9 +28,13 @@
 <!-- END: Scroll to top -->
 
 <!-- END: Footer -->
+
+<!-- Templates -->
 <?= get_template_part('partials/search'); ?>
 <?= get_template_part('partials/mobile-navigation'); ?>
 <?= get_template_part('partials/cookies-info'); ?>
+<!-- END: Templates -->
+
 <!-- Scripts -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55938708-9"></script>
 

@@ -13,3 +13,4 @@ require('./stickyNavigation');
 require('./headerParallax');
 require('./imgLazy');
 require('./scroll-to-top');
+require('./material/index');
