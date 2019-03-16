@@ -6,9 +6,9 @@ const Form = require('./validator/form');
     const _form = document.querySelector('#contactForm');
     const contactFormBtn = document.querySelector('#contactFormBtn');
     const messageContainer = _form.querySelector('[data-form-message]');
-    const {siteUrl} = _form.dataset;
-    if (!siteUrl) throw new Error('[data-url] attribute is not specified');
-    const ajaxurl = siteUrl + '/wp-admin/admin-ajax.php';
+    // const {siteUrl} = _form.dataset;
+    // if (!siteUrl) throw new Error('[data-url] attribute is not specified');
+    // const ajaxurl = siteUrl + '/wp-admin/admin-ajax.php';
     let xhr = null;
 
     const form = _form ? new Form(_form) : null;
@@ -35,7 +35,7 @@ const Form = require('./validator/form');
 
         xhr = ajax.create({
             method: ajax.ajaxMethods.POST,
-            url: ajaxurl,
+            url: PortfolioTheme.Global.ajaxurl,
             async: true
         });
 

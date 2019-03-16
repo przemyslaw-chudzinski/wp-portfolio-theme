@@ -49,3 +49,12 @@ function get_about_url()
 function is_project_page() {
     return is_page('projekty');
 }
+
+/**
+ * @desc It returns the uri of static image
+ */
+if (!function_exists('get_static_image_url')) {
+    function get_static_image_url($image) {
+        return get_template_directory_uri() . '/dist/images/' . $image;
+    }
+}

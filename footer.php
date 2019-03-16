@@ -1,5 +1,5 @@
 <!-- Contact form section -->
-<section class="contact-form-section u-section">
+<section class="contact-form-section u-section" data-bg="<?= get_static_image_url('contact-form-bg.jpg'); ?>">
     <div class="container">
         <?= get_template_part('partials/contact-form'); ?>
     </div>
@@ -40,6 +40,9 @@
 
 <?= wp_footer(); ?>
 <script>
+    PortfolioTheme.Setup({
+        host: '<?= get_home_url("/"); ?>'
+    });
     PortfolioTheme.MobileMenu.init();
     PortfolioTheme.DynamicBackground.init();
     PortfolioTheme.Parallax.init();
@@ -49,12 +52,12 @@
     PortfolioTheme.StickyNav.init();
     PortfolioTheme.ImgLazy.init();
     PortfolioTheme.ScrollToTop.init();
+    PortfolioTheme.ProtectedAreaPlugin.init();
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-55938708-9');
 </script>
 <?php if (is_page('projekty')): ?>

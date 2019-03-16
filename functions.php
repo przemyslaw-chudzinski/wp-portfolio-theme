@@ -13,6 +13,8 @@ add_theme_support( 'post-thumbnails' );
  * Register specific image sizes
  */
 add_image_size( 'post-thumbnail', 400, 300 );
+add_image_size('banner-thumbnail', 1920, 400);
+add_image_size('banner-thumbnail-big', 1920, 800);
 /**
  * Register assets
  */
@@ -70,11 +72,4 @@ function primary_menu_link_active_class ($classes, $item) {
     return $classes;
 }
 add_filter('nav_menu_css_class' , 'primary_menu_link_active_class' , 10 , 2);
-/**
- * @desc It returns the uri of static image
- */
-if (!function_exists('get_static_image_url')) {
-    function get_static_image_url($image) {
-        return get_template_directory_uri() . '/dist/images/' . $image;
-    }
-}
+
