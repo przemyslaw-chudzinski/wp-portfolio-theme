@@ -3,9 +3,12 @@ const {create, ajaxMethods} = require('./ajax');
 (function () {
 
     const _handler = ({detail: {protectedElement}}) => {
+
+        PortfolioTheme.ProtectedAreaPlugin.markAsVisible(protectedElement);
+
         switch (protectedElement.id) {
             case 'protectedPhone': return _handleProtectedPhone();
-            default: return console.log('def');
+            default: return null;
         }
     };
 
