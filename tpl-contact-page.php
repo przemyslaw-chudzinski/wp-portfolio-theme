@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template name: Contact page template
  */
@@ -13,7 +14,7 @@ have_posts() && the_post();
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <h1 class="header__content-heading"><?= get_the_title() ?></h1>
+                <h1 class="header__content-heading a-animated a-fadeInUp"><?= get_the_title() ?></h1>
             </div>
         </div>
     </div>

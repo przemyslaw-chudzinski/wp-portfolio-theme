@@ -5,16 +5,16 @@
 PortfolioTheme.ProtectedAreaPlugin = (function () {
 
     const init = () => {
-
         const protectedElements = document.querySelectorAll('[data-protected-area]');
-
-        protectedElements && protectedElements.length && protectedElements.forEach(protectedElement => {
-            _setupSingleElement(protectedElement);
-        });
-
+        protectedElements && protectedElements.length && protectedElements.forEach(protectedElement => _setupSingleElement(protectedElement));
     };
 
     const _setupSingleElement = protectedElement => {
+        let hidden = isHidden(protectedElement);
+
+        console.log(hidden)
+
+        if (!hidden) return _renderHiddenArea(protectedElement);
 
         const label = protectedElement.dataset.label || 'Wyświetl';
 
@@ -34,22 +34,44 @@ PortfolioTheme.ProtectedAreaPlugin = (function () {
     };
 
     const _handleClick = (protectedElement, target) => {
-        const contentElement = document.createElement('div');
-        const content = protectedElement.dataset.content || '';
-        const id = protectedElement.dataset.protectedArea || null;
         const protectedEvent = new CustomEvent('protected:opened', {
-            detail: {protectedElement, id}
+            detail: {protectedElement}
         });
-        contentElement.classList.add('pc-protected-element__content');
-        contentElement.textContent = content;
-
-        target.remove();
-        protectedElement.appendChild(contentElement);
-
+        _renderHiddenArea(protectedElement, target);
         dispatchEvent(protectedEvent);
     };
 
-    return {init};
+    const _renderHiddenArea = (protectedElement, target = null) => {
+        const contentElement = document.createElement('div');
+        const content = protectedElement.dataset.content || '';
+
+        contentElement.classList.add('pc-protected-element__content');
+        contentElement.textContent = content;
+
+        target && target.remove();
+        protectedElement.appendChild(contentElement);
+    };
+
+    const _localStorageKey = protectedElement => {
+        const id = protectedElement.id;
+        return id ? 'protected-' + protectedElement.id : null;
+    };
+
+    const isHidden = protectedElement => {
+        if ('localStorage' in window) {
+            const value = localStorage.getItem(_localStorageKey(protectedElement));
+            return !(value && value.length);
+        }
+        return false;
+    };
+
+    const markAsVisible = protectedElement => {
+        if ('localStorage' in window) {
+            localStorage.setItem(_localStorageKey(protectedElement), 'true');
+        }
+    };
+
+    return {init, isHidden, markAsVisible};
 
 
 })();

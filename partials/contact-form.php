@@ -8,6 +8,7 @@
     </div>
 
     <form id="contactForm" class="form" novalidate data-site-url="<?= get_site_url(); ?>">
+
         <div data-form-message></div>
         <div class="row">
             <div class="col-12 col-lg-4">
