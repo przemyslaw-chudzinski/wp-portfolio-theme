@@ -1,3 +1,9 @@
 .contact-form-section {
-  background-color: $color-void;
+  background-color: rgba($color-void, .9);
+  background-image: url('../images/contact-form-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  position: relative;
+  z-index: 100;
 }

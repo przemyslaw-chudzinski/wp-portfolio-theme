@@ -34,15 +34,13 @@ PortfolioTheme.Search = (function () {
         const closeEl = searchElem.querySelector('[data-search-close]');
         const input = searchElem.querySelector('[data-search-input]');
         const searchResultsContainer = searchElem.querySelector('[data-search-results]');
-        const url = searchElem.dataset.searchUrl || null;
         const preloader = searchElem.querySelector('[data-search-preloader]');
 
         if (!input) throw new Error('Could not find [data-search-input] element');
         if (!searchElem) throw new Error('Could not found [data-search="' + searchElem + '" attribute');
-        if (!url) throw new Error('Wrong value for [data-search-url] attribute');
 
         closeEl && closeEl.addEventListener('click', () => _destroy(searchElem, searchContainer), true);
-        input && input.addEventListener('input', event => _handleChange(event, searchResultsContainer, url, preloader), true);
+        input && input.addEventListener('input', event => _handleChange(event, searchResultsContainer, PortfolioTheme.Global.host, preloader), true);
         searchElem && searchElem.addEventListener('keydown', event => _handleEscapeKeyDown(searchElem, searchContainer, event), true);
         searchElem.addEventListener('transitionend', () => input && input.focus(), true);
 

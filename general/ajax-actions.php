@@ -53,3 +53,37 @@ function send_email_ajax()
     die;
 }
 add_action('wp_ajax_nopriv_sendUserEmail', 'send_email_ajax');
+
+function phone_shown_ajax()
+{
+    $to = 'kontakt@przemyslawchudzinski.pl';
+    $subject = 'Wiadomość ze strony przemyslawchudzinski.pl - Ktoś zobaczył twój numer telefony';
+    $message = '';
+    $headers = ['Content-Type: text/html; charset=UTF-8'];
+    $attachments = [];
+    $response = [
+        'success' => true,
+        'message' => '',
+        'type' => 'success'
+    ];
+    $date = date('Y-m-d H:i:s');
+
+    $message = '';
+    $message .= "<div style='padding: 10px; background-color: blue; color: #fff;'>";
+    $message .= "<h2>Data: {$date}</h2>";
+    $message .= "</div>";
+    $message .= "<div style='margin-top: 20px; font-size: 16px; background-color: #e2e2e2; padding: 10px;'>";
+    $message .= "Ktoś zobaczył twój numer telefonu";
+    $message .= "</div>";
+
+    if (wp_mail($to, $subject, $message, $headers, $attachments)) $response['message'] = 'Dziękuję! Wiadomośc została wysłana poprawnie.';
+    else {
+        $response['success'] = false;
+        $response['type'] = 'danger';
+        $response['message'] = 'Ups! Coś poszło nie tak. Jeżeli błąd będzie się powtarzał, alternatywnie możesz skorzytać z adresów email podanych na stronie kontakt';
+    }
+
+    echo json_encode($response);
+    die;
+}
+add_action('wp_ajax_nopriv_emailShown', 'phone_shown_ajax');
