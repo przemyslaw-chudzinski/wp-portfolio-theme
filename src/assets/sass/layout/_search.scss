@@ -87,8 +87,7 @@
       font-size: 2rem;
       transition: all .2s ease-in-out;
       &:hover {
-        transform: translateX(.2rem);
-        //color: $color-primary;
+        background-color: rgba($color-primary-white, .1);
         p {
           color: $color-secondary;
         }
