@@ -4,6 +4,7 @@ require_once 'general/custom-post-types.php';
 require_once 'general/theme-utils.php';
 require_once 'general/ajax-actions.php';
 require_once 'general/rest-api.php';
+require_once 'general/extra-data.php';
 
 /**
  * Theme support

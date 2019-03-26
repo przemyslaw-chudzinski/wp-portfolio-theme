@@ -25,7 +25,7 @@ const isInViewPortY = element => {
 };
 
 const throttle = (fn, delay = 300) => {
-   if (!fn || typeof fn !== 'function') throw new Error('fn mus be a callable function');
+   if (!fn || typeof fn !== 'function') throw new Error('fn must be a callable');
     let _timeout = null;
     return (...args) => {
         clearTimeout(_timeout);

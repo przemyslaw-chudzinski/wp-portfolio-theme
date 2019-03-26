@@ -2,9 +2,10 @@
 /**
  * Template name: Home page template
  */
+
+get_header();
 ?>
 
-<?= get_header(); ?>
 <!-- Header -->
 <header class="header header--big header--with-overlay header--center-background header--with-bg-cover home-header" data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail-big'); ?>">
     <?= get_template_part('partials/navigation') ?>

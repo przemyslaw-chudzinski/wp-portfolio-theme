@@ -3,7 +3,7 @@
   height: 40rem;
   position: relative;
   background-color: $color-secondary-dark;
-  background-size: contain;
+  //background-size: contain;
   //background-position: center;
   background-repeat: no-repeat;
 
@@ -66,6 +66,10 @@
 
   &--with-bg-cover {
     background-size: cover;
+  }
+
+  &--with-bg-contain {
+    background-size: contain;
   }
 
   //.navigation {

@@ -30,6 +30,7 @@
 @import "components/heading";
 @import "components/material/material-form";
 @import "components/contact-way-box";
+@import "components/technology-feature";
 // Layout
 @import "layout/header";
 @import "layout/navigation";
@@ -41,12 +42,14 @@
 @import "layout/scroll-to-top";
 @import "layout/social-media-icons";
 @import "layout/contact-form-section";
+@import "layout/h-area";
 // Pages
-@import "pages/index";
+@import "pages/home-tpl";
 @import "pages/blank";
 @import "pages/blog";
-@import "pages/contact";
+@import "pages/contact-tpl";
 @import "pages/single-post";
 @import "pages/single-project";
-@import "pages/projects";
+@import "pages/projects-tpl";
 @import "pages/404";
+@import "pages/about-tpl";

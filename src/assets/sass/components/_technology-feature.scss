@@ -1,0 +1,27 @@
+.technology-feature {
+
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 20rem;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 2rem;
+  }
+
+}
