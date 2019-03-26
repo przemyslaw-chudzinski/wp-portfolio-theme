@@ -1,6 +1,6 @@
 <!-- Blog post -->
 <div class="blog-post">
-    <a href="<?= get_the_permalink($post->ID) ?>" aria-label="<?= $post->post_title ?>">
+    <a class="blog-post__image-link" href="<?= get_the_permalink($post->ID) ?>" aria-label="<?= $post->post_title ?>">
         <?php if (has_post_thumbnail()): ?>
             <figure class="blog-post__thumbnail">
                 <img data-lazy-img data-src="<?= get_the_post_thumbnail_url($post, 'post-thumbnail') ?>" alt="<?= the_post_thumbnail_caption($post) ?>">
