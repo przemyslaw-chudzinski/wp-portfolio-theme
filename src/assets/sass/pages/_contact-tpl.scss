@@ -4,3 +4,14 @@
     width: 36rem;
   }
 }
+
+.contact-info-way {
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  @include media-breakpoint-up(lg) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

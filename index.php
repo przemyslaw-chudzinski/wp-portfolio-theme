@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <div class="col-12 col-lg-4" style="margin-bottom: 5rem;">
+                    <div id="blog-page-posts-list" class="col-12 col-lg-4">
                         <?= get_template_part('partials/blog-post') ?>
                     </div>
                 <?php endwhile; else : ?>

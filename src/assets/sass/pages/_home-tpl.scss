@@ -50,3 +50,15 @@
   }
 
 }
+
+#home-page-posts-list {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}

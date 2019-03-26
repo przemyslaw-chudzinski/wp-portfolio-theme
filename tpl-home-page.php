@@ -81,7 +81,7 @@ get_header();
             <?php if(count($posts) > 0): ?>
                 <div class="row">
                     <?php foreach ($posts as $post): ?>
-                        <div class="col-12 col-lg-4">
+                        <div id="home-page-posts-list" class="col-12 col-lg-4">
                             <?= get_template_part('partials/blog-post'); ?>
                         </div>
                     <?php endforeach; ?>
