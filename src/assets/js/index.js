@@ -17,3 +17,4 @@ require('./scroll-to-top');
 require('./material/index');
 require('./protectedArea');
 require('./protectedAreaHandler');
+require('./hiddenAreaPlugin');

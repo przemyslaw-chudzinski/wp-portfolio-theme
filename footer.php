@@ -41,7 +41,7 @@
 <?= wp_footer(); ?>
 <script>
     PortfolioTheme.Setup({
-        host: '<?= get_home_url("/"); ?>'
+        siteUrl: '<?= get_home_url("/"); ?>'
     });
     PortfolioTheme.MobileMenu.init();
     PortfolioTheme.DynamicBackground.init();
@@ -53,6 +53,7 @@
     PortfolioTheme.ImgLazy.init();
     PortfolioTheme.ScrollToTop.init();
     PortfolioTheme.ProtectedAreaPlugin.init();
+    PortfolioTheme.HiddenAreaPlugin.init();
 </script>
 <script>
     window.dataLayer = window.dataLayer || [];

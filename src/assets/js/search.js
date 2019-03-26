@@ -40,7 +40,7 @@ PortfolioTheme.Search = (function () {
         if (!searchElem) throw new Error('Could not found [data-search="' + searchElem + '" attribute');
 
         closeEl && closeEl.addEventListener('click', () => _destroy(searchElem, searchContainer), true);
-        input && input.addEventListener('input', event => _handleChange(event, searchResultsContainer, PortfolioTheme.Global.host, preloader), true);
+        input && input.addEventListener('input', event => _handleChange(event, searchResultsContainer, PortfolioTheme.Global.siteUrl, preloader), true);
         searchElem && searchElem.addEventListener('keydown', event => _handleEscapeKeyDown(searchElem, searchContainer, event), true);
         searchElem.addEventListener('transitionend', () => input && input.focus(), true);
 

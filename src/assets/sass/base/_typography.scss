@@ -20,7 +20,7 @@ h3 {
 }
 
 p {
-  font-size: 1.8rem; //1.5rem;
+  font-size: 1.5rem; //1.5rem;
   font-weight: 400;
   margin-bottom: 1rem;
   line-height: 2.8rem;
@@ -43,7 +43,7 @@ a {
 
 ul {
   list-style-position: inside;
-  font-size: 1.8rem; //1.5rem;
+  font-size: 1.5rem; //1.5rem;
   margin-bottom: 1rem;
   li {
     &:not(:last-child) {
@@ -57,7 +57,7 @@ code {
   border-radius: 3px;
   background-color: $color-primary;
   color: $color-primary-white;
-  font-size: 1.8rem; //1.5rem;
+  font-size: 1.5rem; //1.5rem;
   display: block;
   padding: 2rem;
 }

@@ -7,7 +7,8 @@
     box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
     background: $color-primary-white;
     padding: 2rem 3rem;
-    width: 35rem;
+    //width: 35rem;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,5 +21,14 @@
       background: $color-primary;
       color: $color-primary-white;
     }
+
+    @include media-breakpoint-up(sm) {
+      width: 49%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 35rem;
+    }
+
   }
 }
