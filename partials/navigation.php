@@ -36,12 +36,14 @@
     <!-- END: Search btn -->
 
     <!-- Social media icons -->
+    <?php if(!is_page_template('tpl-projects-page.php')): ?>
     <ul class="social-media-icons">
         <li><span>Obserwuj mnie na: </span></li>
         <li><a href=""><span class="fa fa-linkedin"></span></a></li>
         <li><a href=""><span class="fa fa-facebook"></span></a></li>
         <li><a href=""><span class="fa fa-instagram"></span></a></li>
     </ul>
+    <?php endif; ?>
     <!-- END: Social media icons -->
 
 </div>

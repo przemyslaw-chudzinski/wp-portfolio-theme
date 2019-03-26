@@ -1,6 +1,6 @@
 <?= get_header(); ?>
 <!-- Header edited -->
-<header class="header header--with-gradient" data-has-parallax data-background-url="<?= get_static_image_url('blog-header-bg.jpg'); ?>">
+<header class="header header--with-gradient u-bg-position-x-center" data-has-parallax data-background-url="<?= get_static_image_url('blog-header-bg.jpg'); ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">

@@ -157,6 +157,13 @@
     }
   }
 
+  &--scrolled .navigation__mobile-btn {
+    border-color: $color-primary;
+    .navigation__mobile-btn__wrapper  span {
+      background-color: $color-primary;
+    }
+  }
+
   &__list-item.active.cta-nav-button &__list-link {
     color: $color-primary !important;
   }
