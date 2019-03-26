@@ -1,3 +1,15 @@
 .posts-list {
   padding: 5rem 0;
 }
+
+#blog-page-posts-list {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
