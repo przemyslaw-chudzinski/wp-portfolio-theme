@@ -7,7 +7,7 @@
 ?>
 
 <!-- Header -->
-<header class="header header--big" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'large') ?>">
+<header class="header header--big" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail-large') ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">

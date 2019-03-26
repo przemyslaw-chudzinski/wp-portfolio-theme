@@ -1,17 +1,20 @@
-<?= get_header(); ?>
+<?php
 
-<?php $currentCategory = get_category( get_query_var( 'cat' ) ); ?>
+$currentCategory = get_category( get_query_var( 'cat' ) );
+
+get_header();
+?>
 
 <!-- Header -->
-<header class="header" data-has-parallax data-background-url="<?= get_static_image_url('category-bg.jpg') ?>">
+<header class="header header--with-overlay header--with-gradient u-bg-position-x-center" data-has-parallax data-background-url="<?= get_static_image_url('category-header-bg.jpg') ?>">
     <?= get_template_part('partials/navigation') ?>
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <h2 class="header__content-subheading u-color-primary">Wpisy w kategorii</h2>
-                <h1 class="header__content-heading"><?= $currentCategory->name ?></h1>
+                <h2 class="header__content-subheading u-color-primary a-animated a-fadeInUp">Wpisy w kategorii</h2>
+                <h1 class="header__content-heading a-animated a-fadeInUp"><?= $currentCategory->name ?></h1>
                 <?php if (strlen($currentCategory->category_description) > 0): ?>
-                    <p class="header__content-desc"><?= $currentCategory->category_description ?></p>
+                    <p class="header__content-desc a-animated a-fadeInLeft"><?= $currentCategory->category_description ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -22,7 +25,7 @@
             Lista wpisów
         </a>
     </div>
-    <div class="header__footer header__footer--right">
+    <div class="header__footer header__footer--right  a-animated a-fadeInRight a-delay-1">
         <?php if(count(get_categories()) > 0): ?>
             <?php foreach (get_categories() as $category): ?>
                 <a href="<?= get_category_link($category->term_id) ?>" class="header__footer-link u-ml-1 <?= $currentCategory->term_id === $category->term_id ? ' active '  : null ?>"><?= $category->name ?></a>
