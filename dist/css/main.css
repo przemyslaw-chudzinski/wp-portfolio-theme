@@ -3847,6 +3847,13 @@ code {
   margin-bottom: 2rem;
   width: 36rem; }
 
+.contact-info-way:not(:last-child) {
+  margin-bottom: 3rem; }
+
+@media (min-width: 992px) {
+  .contact-info-way:not(:last-child) {
+    margin-bottom: 0; } }
+
 .projects-list-secondary {
   height: 100vh; }
   .projects-list-secondary__preview {
