@@ -4,8 +4,13 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
+
+  @media (min-width: 1570px) {
+    display: flex;
+  }
+
   li {
     margin: 0 !important;
     &:not(:last-child) {

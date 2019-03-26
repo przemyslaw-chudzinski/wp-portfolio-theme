@@ -3528,6 +3528,10 @@ code {
     color: #2f2fa2; }
     .navigation--scrolled .social-media-icons li a:hover {
       color: #f64c72; }
+  .navigation--scrolled .navigation__mobile-btn {
+    border-color: #2f2fa2; }
+    .navigation--scrolled .navigation__mobile-btn .navigation__mobile-btn__wrapper span {
+      background-color: #2f2fa2; }
   .navigation__list-item.active.cta-nav-button .navigation__list-link {
     color: #2f2fa2 !important; }
   .navigation .cta-nav-button a:hover {
@@ -3760,8 +3764,11 @@ code {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: none;
   flex-wrap: wrap; }
+  @media (min-width: 1570px) {
+    .social-media-icons {
+      display: flex; } }
   .social-media-icons li {
     margin: 0 !important; }
     .social-media-icons li:not(:last-child) {
