@@ -1,3 +1,11 @@
+<?php
+
+$navigationLinkedInUrl = themeRedux('th-global-socialMedia-linkedIn');
+$navigationInstagramUrl = themeRedux('th-global-socialMedia-instagram');
+$navigationFacebookUrl = themeRedux('th-global-socialMedia-facebook');
+
+?>
+
 <!-- Navigation -->
 <div data-nav-sticky
      class="navigation <?= !is_page_template('tpl-projects-page.php') ? 'navigation--sticky' : null ?> navigation--with-color a-animated a-fadeInDown">
@@ -39,9 +47,9 @@
     <?php if(!is_page_template('tpl-projects-page.php')): ?>
     <ul class="social-media-icons">
         <li><span>Obserwuj mnie na: </span></li>
-        <li><a href=""><span class="fa fa-linkedin"></span></a></li>
-        <li><a href=""><span class="fa fa-facebook"></span></a></li>
-        <li><a href=""><span class="fa fa-instagram"></span></a></li>
+        <li><a href="<?=  $navigationLinkedInUrl ?>"><span class="fa fa-linkedin"></span></a></li>
+        <li><a href="<?= $navigationFacebookUrl ?>"><span class="fa fa-facebook"></span></a></li>
+        <li><a href="<?= $navigationInstagramUrl ?>"><span class="fa fa-instagram"></span></a></li>
     </ul>
     <?php endif; ?>
     <!-- END: Social media icons -->

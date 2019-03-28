@@ -1,4 +1,10 @@
-<?= get_header(); ?>
+<?php
+
+$blogHeader = themeRedux('th-blog-header');
+$blogSubheader = themeRedux('th-blog-subheader');
+
+get_header();
+?>
 <!-- Header edited -->
 <header class="header header--with-gradient u-bg-position-x-center" data-has-parallax data-background-url="<?= get_static_image_url('blog-header-bg.jpg'); ?>">
     <?= get_template_part('partials/navigation') ?>
@@ -25,7 +31,12 @@
         <div class="container">
             <div class="u-text-center">
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Wpisy na blogu</h2>
+                    <?php if($blogHeader): ?>
+                        <h2 class="theme-heading__text"><?= $blogHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($blogSubheader): ?>
+                        <div class="theme-heading__subtext"><?= $blogSubheader ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="row">
