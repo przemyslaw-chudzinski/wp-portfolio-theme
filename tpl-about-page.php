@@ -6,8 +6,25 @@
 $favTechnologies = getFavouritesTechnologies();
 $coursesList = getCoursesList();
 
-get_header();
+/* About section */
+$aboutHeader = themeRedux('th-about-tp-about-s-header');
+$aboutSubheader = themeRedux('th-about-tp-about-s-subheader');
+$aboutImage = themeRedux('th-about-tp-about-s-image');
 
+/* Technologies list */
+$technologiesHeader = themeRedux('th-about-tp-technologies-s-header');
+$technologiesSubheader = themeRedux('th-about-tp-technologies-s-subheader');
+
+/* Courses list section */
+$coursesListHeader = themeRedux('th-about-tp-coursesList-s-header');
+$coursesListSubheader = themeRedux('th-about-tp-coursesList-s-subheader');
+
+/* Certifications section */
+$certificationsHeader = themeRedux('th-about-tp-certifications-s-header');
+$certificationsSubheader = themeRedux('th-about-tp-certifications-s-subheader');
+$certificationsContent = themeRedux('th-about-tp-certifications-s-content');
+
+get_header();
 have_posts() && the_post();
 ?>
 
@@ -32,17 +49,24 @@ have_posts() && the_post();
         <div class="container">
             <div class="u-text-center">
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Kilka słów o mnie</h2>
+                    <?php if($aboutHeader): ?>
+                    <h2 class="theme-heading__text"><?= $aboutHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($aboutSubheader): ?>
+                    <div class="theme-heading__subtext"><?= $aboutSubheader ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
 
             <div class="row">
+                <?php if(!empty($aboutImage['url'])): ?>
                 <div class="col-12 col-lg-6">
                     <figure>
-                        <img data-lazy-img data-src="<?= get_static_image_url('avatar-large.jpg') ?>" alt="" style="width: 100%; height: auto">
+                        <img data-lazy-img data-src="<?= $aboutImage['url'] ?>" alt="" style="width: 100%; height: auto">
                     </figure>
                 </div>
-                <div class="col-12 col-lg-6">
+                <?php endif; ?>
+                <div class="col-12 <?= !empty($aboutImage['url']) ? 'col-lg-6' : null ?>">
                     <?= the_content(); ?>
                 </div>
             </div>
@@ -59,7 +83,12 @@ have_posts() && the_post();
 
             <div class="u-text-center">
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Technologie z którymi najczęściej pracuję</h2>
+                    <?php if($technologiesHeader): ?>
+                        <h2 class="theme-heading__text"><?= $technologiesHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($technologiesSubheader): ?>
+                        <div class="theme-heading__subtext"><?= $technologiesSubheader ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -92,7 +121,12 @@ have_posts() && the_post();
 
             <div class="u-text-center">
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Lista szkoleń</h2>
+                    <?php if($coursesListHeader): ?>
+                        <h2 class="theme-heading__text"><?= $coursesListHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($coursesListSubheader): ?>
+                        <div class="theme-heading__subtext"><?= $coursesListSubheader ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -118,10 +152,15 @@ have_posts() && the_post();
         <div class="container">
             <div class="u-text-center">
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Certyfikaty</h2>
+                    <?php if($certificationsHeader): ?>
+                        <h2 class="theme-heading__text"><?= $certificationsHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($certificationsSubheader): ?>
+                        <div class="theme-heading__subtext"><?= $certificationsSubheader ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
-            <p>Listę certyfikatów oraz inne informacje można znaleźć na <a href="https://www.linkedin.com/in/przemys%C5%82aw-chudzi%C5%84ski-306864112/">LinkedIn</a></p>
+            <?= $certificationsContent ?>
         </div>
 
     </section>

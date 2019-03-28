@@ -3,6 +3,19 @@
  * Template name: Home page template
  */
 
+$projects = fetch_latest_posts('project');
+$categories = get_categories();
+$posts = fetch_latest_posts();
+
+$homeBannerHeader = themeRedux('th-home-tp-banner-s-header');
+$homeBannerSubheader = themeRedux('th-home-tp-banner-s-subheader');
+
+$homeProjectsHeader = themeRedux('th-home-tp-projects-s-header');
+$homeProjectsSubheader = themeRedux('th-home-tp-projects-s-subheader');
+
+$homeBlogHeader = themeRedux('th-home-tp-blog-s-header');
+$homeBlogSubheader = themeRedux('th-home-tp-blog-s-subheader');
+
 get_header();
 ?>
 
@@ -12,10 +25,12 @@ get_header();
     <div class="container">
         <div class="header__content">
             <div class="header__content-text">
-                <h1 class="header__content-heading a-animated a-fadeInLeft">Przemysław Chudziński</h1>
-                <div class="header__content-desc a-animated a-fadeInRight u-color-tertiary">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor nisi perspiciatis tempore! Deserunt dolore molestias mollitia, sapiente ullam ut voluptatem
-                </div>
+                <?php if ($homeBannerHeader): ?>
+                <h1 class="header__content-heading a-animated a-fadeInLeft"><?= $homeBannerHeader ?></h1>
+                <?php ?>
+                <?php if ($homeBannerSubheader) ?>
+                <div class="header__content-desc a-animated a-fadeInRight u-color-tertiary"><?= $homeBannerSubheader ?></div>
+                <?php endif; ?>
                 <a href="<?= get_about_url(); ?>" class="theme-button theme-button--primary theme-button--with-icon theme-button--with-radius u-uppercase home-header__btn a-animated a-fadeInUp a-delay-1">Poznajmy się lepiej</a>
             </div>
         </div>
@@ -29,10 +44,14 @@ get_header();
         <div class="container">
             <div class="u-text-center">
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Ostatnio dodane projekty</h2>
+                    <?php if($homeProjectsHeader): ?>
+                        <h2 class="theme-heading__text"><?= $homeProjectsHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($homeProjectsSubheader): ?>
+                        <div class="theme-heading__subtext"><?= $homeProjectsSubheader ?></div>
+                    <?php endif; ?>
                 </div>
                 <div class="row">
-                    <?php $projects = fetch_latest_posts('project'); ?>
                     <?php if (count($projects) > 0): ?>
                     <?php foreach ($projects as  $project): ?>
                     <div class="col-lg-4">
@@ -65,19 +84,22 @@ get_header();
     <section class="blog-section">
         <div class="container">
             <div class="u-text-center">
-<!--                <h2>Ostatnie Wpisy Na Blogu</h2>-->
                 <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                    <h2 class="theme-heading__text">Najnowsze wpisy</h2>
+                    <?php if($homeBlogHeader): ?>
+                        <h2 class="theme-heading__text"><?= $homeBlogHeader ?></h2>
+                    <?php endif; ?>
+                    <?php if($homeBlogSubheader): ?>
+                        <div class="theme-heading__subtext"><?= $homeBlogSubheader ?></div>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="blog-section__categories u-text-center">
-                <?php if(count(get_categories()) > 0): ?>
-                    <?php foreach (get_categories() as $category): ?>
+                <?php if(count($categories) > 0): ?>
+                    <?php foreach ($categories as $category): ?>
                         <a href="<?= get_category_link($category->term_id) ?>" class="label label--outline label--primary"><?= $category->name ?></a>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
-            <?php $posts = fetch_latest_posts(); ?>
             <?php if(count($posts) > 0): ?>
                 <div class="row">
                     <?php foreach ($posts as $post): ?>

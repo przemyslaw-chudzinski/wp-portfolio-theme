@@ -2,10 +2,9 @@
 /**
  * Template name: Projects page template
  */
-get_header();
 
 $projects = fetch_latest_posts('project', 20);
-
+get_header();
 ?>
 
 <!-- Header -->

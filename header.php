@@ -34,8 +34,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?= get_static_image_url('ms-icon-144x144.png'); ?>">
     <meta name="theme-color" content="#ffffff">
-
-
     <?= wp_head(); ?>
 </head>
 <body <?= body_class() ?>>
