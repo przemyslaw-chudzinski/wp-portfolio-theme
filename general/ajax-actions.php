@@ -61,7 +61,7 @@ function phone_shown_ajax()
     $message .= "</div>";
 
 
-    wp_mail($to, $subject, $message, $headers, $attachments)
+    wp_mail($to, $subject, $message, $headers, $attachments);
 
     die;
 }
