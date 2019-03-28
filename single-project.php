@@ -1,10 +1,12 @@
 <?php
+the_post();
+
 $prev_post = get_previous_post();
 $next_post = get_next_post();
 $githubLink = get_post_meta(get_the_ID(), 'github_link', true);
 $previewLink = get_post_meta(get_the_ID(), 'preview_link', true);
 
-get_header(); the_post();
+get_header();
 ?>
 
 <!-- Header -->

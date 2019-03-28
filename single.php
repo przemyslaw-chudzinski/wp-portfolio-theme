@@ -3,10 +3,11 @@ the_post();
 
 $prev_post = get_previous_post();
 $next_post = get_next_post();
+
+$tags = wp_get_post_tags(get_the_ID());
+
+get_header();
 ?>
-
-
-<?= get_header(); ?>
 
 <!-- Header -->
 <header class="header header--with-gradient header--with-overlay u-bg-position-x-center" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail-large') ?>">
@@ -18,7 +19,6 @@ $next_post = get_next_post();
                 <h1 class="header__content-heading"><?= get_the_title() ?></h1>
             </div>
         </div>
-<!--        <div data-background-overlay class="header__overlay"></div>-->
     </div>
 
     <?php if($prev_post): ?>
@@ -42,7 +42,6 @@ $next_post = get_next_post();
         </a>
     </div>
     <div class="header__footer header__footer--right">
-        <?php $tags = wp_get_post_tags(get_the_ID()); ?>
         <?php if (count($tags) > 0): ?>
             <?php foreach ($tags as $tag): ?>
                 <a href="#" class="header__footer-link label label--primary ml-1" aria-label="<?= $tag->name ?>">#<?= $tag->name ?></a>

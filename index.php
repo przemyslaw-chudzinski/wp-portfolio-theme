@@ -1,5 +1,7 @@
 <?php
 
+$categories = get_categories();
+
 $blogHeader = themeRedux('th-blog-header');
 $blogSubheader = themeRedux('th-blog-subheader');
 
@@ -16,8 +18,8 @@ get_header();
         </div>
     </div>
     <div class="header__footer header__footer--right a-animated a-fadeInRight a-delay-1">
-        <?php if(count(get_categories()) > 0): ?>
-            <?php foreach (get_categories() as $category): ?>
+        <?php if(count($categories) > 0): ?>
+            <?php foreach ($categories as $category): ?>
                 <a href="<?= get_category_link($category->term_id) ?>" class="header__footer-link u-ml-1"><?= $category->name ?></a>
             <?php endforeach; ?>
         <?php endif; ?>

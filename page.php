@@ -1,5 +1,7 @@
-<?= get_header() ?>
-<?php  have_posts() && the_post(); ?>
+<?php
+the_post();
+get_header();
+?>
 
 <!-- Header -->
 <header class="header header--with-gradient" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail') ?>">

@@ -4,10 +4,7 @@
         return;
     }
 
-
-    // This is your option name where all the Redux data is stored.
     $opt_name = "redux";
-
 
     $args = array(
         // TYPICAL -> Change these values as you need/desire
@@ -92,11 +89,7 @@
         }
     }
 
-    // Add content after the form.
     Redux::setArgs( $opt_name, $args );
-    /*
-     * <--- END SECTIONS
-     */
 
 
     require_once 'panel-options/global-options.php';
@@ -122,77 +115,10 @@
     }
 
     /**
-     * Custom function for the callback validation referenced above
-     * */
-    if ( ! function_exists( 'redux_validate_callback_function' ) ) {
-        function redux_validate_callback_function( $field, $value, $existing_value ) {
-            $error   = false;
-            $warning = false;
-
-            //do your validation
-            if ( $value == 1 ) {
-                $error = true;
-                $value = $existing_value;
-            } elseif ( $value == 2 ) {
-                $warning = true;
-                $value   = $existing_value;
-            }
-
-            $return['value'] = $value;
-
-            if ( $error == true ) {
-                $field['msg']    = 'your custom error message';
-                $return['error'] = $field;
-            }
-
-            if ( $warning == true ) {
-                $field['msg']      = 'your custom warning message';
-                $return['warning'] = $field;
-            }
-
-            return $return;
-        }
-    }
-
-    /**
-     * Custom function for the callback referenced above
-     */
-    if ( ! function_exists( 'redux_my_custom_field' ) ) {
-        function redux_my_custom_field( $field, $value ) {
-            print_r( $field );
-            echo '<br/>';
-            print_r( $value );
-        }
-    }
-
-    /**
-     * Custom function for filtering the sections array. Good for child themes to override or add to the sections.
-     * Simply include this function in the child themes functions.php file.
-     * NOTE: the defined constants for URLs, and directories will NOT be available at this point in a child theme,
-     * so you must use get_template_directory_uri() if you want to use any of the built in icons
-     * */
-    if ( ! function_exists( 'dynamic_section' ) ) {
-        function dynamic_section( $sections ) {
-            //$sections = array();
-            $sections[] = array(
-                'title'  => __( 'Section via hook', 'redux-framework-demo' ),
-                'desc'   => __( '<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'redux-framework-demo' ),
-                'icon'   => 'el el-paper-clip',
-                // Leave this as a blank section, no options just some intro text set above.
-                'fields' => array()
-            );
-
-            return $sections;
-        }
-    }
-
-    /**
      * Filter hook for filtering the args. Good for child themes to override or add to the args array. Can also be used in other functions.
      * */
     if ( ! function_exists( 'change_arguments' ) ) {
         function change_arguments( $args ) {
-            //$args['dev_mode'] = true;
-
             return $args;
         }
     }

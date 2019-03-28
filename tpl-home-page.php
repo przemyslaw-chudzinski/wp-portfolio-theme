@@ -3,6 +3,10 @@
  * Template name: Home page template
  */
 
+$projects = fetch_latest_posts('project');
+$categories = get_categories();
+$posts = fetch_latest_posts();
+
 $homeBannerHeader = themeRedux('th-home-tp-banner-s-header');
 $homeBannerSubheader = themeRedux('th-home-tp-banner-s-subheader');
 
@@ -48,7 +52,6 @@ get_header();
                     <?php endif; ?>
                 </div>
                 <div class="row">
-                    <?php $projects = fetch_latest_posts('project'); ?>
                     <?php if (count($projects) > 0): ?>
                     <?php foreach ($projects as  $project): ?>
                     <div class="col-lg-4">
@@ -91,13 +94,12 @@ get_header();
                 </div>
             </div>
             <div class="blog-section__categories u-text-center">
-                <?php if(count(get_categories()) > 0): ?>
-                    <?php foreach (get_categories() as $category): ?>
+                <?php if(count($categories) > 0): ?>
+                    <?php foreach ($categories as $category): ?>
                         <a href="<?= get_category_link($category->term_id) ?>" class="label label--outline label--primary"><?= $category->name ?></a>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
-            <?php $posts = fetch_latest_posts(); ?>
             <?php if(count($posts) > 0): ?>
                 <div class="row">
                     <?php foreach ($posts as $post): ?>
