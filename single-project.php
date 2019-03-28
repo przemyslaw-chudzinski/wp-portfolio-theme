@@ -1,9 +1,10 @@
-<?= get_header(); the_post(); ?>
 <?php
-    $prev_post = get_previous_post();
-    $next_post = get_next_post();
-    $githubLink = get_post_meta(get_the_ID(), 'github_link', true);
-    $previewLink = get_post_meta(get_the_ID(), 'preview_link', true);
+$prev_post = get_previous_post();
+$next_post = get_next_post();
+$githubLink = get_post_meta(get_the_ID(), 'github_link', true);
+$previewLink = get_post_meta(get_the_ID(), 'preview_link', true);
+
+get_header(); the_post();
 ?>
 
 <!-- Header -->
@@ -38,13 +39,13 @@
     </div>
     <div class="header__footer header__footer--right">
         <?php if (!empty($githubLink)): ?>
-        <a href="<?= get_post_meta(get_the_ID(), 'github_link', true) ?>" target="_blank" class="header__footer-link header__footer-link--outline d-none d-lg-inline-block" aria-label="Zobacz na github">
+        <a href="<?= $githubLink ?>" target="_blank" class="header__footer-link header__footer-link--outline d-none d-lg-inline-block" aria-label="Zobacz na github">
             <span class="fa fa-github-alt header__footer-icon"></span>
             Zobacz na github
         </a>
         <?php endif; ?>
         <?php if (!empty($previewLink)): ?>
-        <a href="<?= get_post_meta(get_the_ID(), 'preview_link', true) ?>" target="_blank" class="header__footer-link header__footer-link--outline ml-4 d-none d-lg-inline-block" aria-label="Zobacz w przeglądarce">
+        <a href="<?= $previewLink ?>" target="_blank" class="header__footer-link header__footer-link--outline ml-4 d-none d-lg-inline-block" aria-label="Zobacz w przeglądarce">
             <span class="fa fa-internet-explorer header__footer-icon"></span>
             Zobacz w przeglądarce
         </a>

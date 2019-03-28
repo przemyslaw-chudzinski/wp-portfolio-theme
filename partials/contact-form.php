@@ -1,9 +1,22 @@
+<?php
+
+$contactFormHeader = themeRedux('th-contactForm-header');
+$contactFormSubheader = themeRedux('th-contactForm-subheader');
+$contactFormRodo = themeRedux('th-contactForm-rodo');
+
+?>
+
 <!-- Contact form -->
 <div class="contact-form">
 
     <div class="u-text-center">
         <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-            <h2 class="theme-heading__text">Formularz kontaktowy</h2>
+            <?php if($contactFormHeader): ?>
+                <h2 class="theme-heading__text"><?= $contactFormHeader ?></h2>
+            <?php endif; ?>
+            <?php if($contactFormSubheader): ?>
+                <div class="theme-heading__subtext"><?= $contactFormSubheader ?></div>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -66,10 +79,7 @@
             <div class="form-group__checkbox">
                 <input id="confirmRules" data-form-control type="checkbox" required>
                 <label for="confirmRules" class="form-group__checkbox-label">
-                    Wyrażam zgodę na przetwarzanie danych osobowych
-                    zgodnie z ustawą o ochronie danych osobowych w związku z wysyłaniem zapytania przez formularz kontaktowy.
-                    Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Zostałem poinformowany, że przysługuje mi prawo dostępu do swoich danych,
-                    możliwości ich poprawienia, żądania zaprzestania ich przetwarzania. Administratorem danych osobowych jest osoba prywatna Przemysław Chudziński.
+                    <?= $contactFormRodo ?>
                 </label>
             </div>
         </div>

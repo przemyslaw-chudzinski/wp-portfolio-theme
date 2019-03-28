@@ -58,3 +58,14 @@ if (!function_exists('get_static_image_url')) {
         return get_template_directory_uri() . '/dist/images/' . $image;
     }
 }
+
+if (!function_exists('themeRedux'))
+{
+    function themeRedux($opt_name = null)
+    {
+        global $redux;
+        if (!isset($opt_name)) return $redux;
+        $value = $redux[$opt_name];
+        return isset($value) && $value !== '' ? $value : null;
+    }
+}

@@ -1,5 +1,5 @@
 <?php
-have_posts() && the_post();
+the_post();
 
 $prev_post = get_previous_post();
 $next_post = get_next_post();

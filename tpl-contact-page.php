@@ -4,6 +4,14 @@
  * Template name: Contact page template
  */
 
+/* Main section */
+$mainHeader = themeRedux('th-contact-tp-main-s-header');
+$mainSubheader = themeRedux('th-contact-tp-main-s-subheader');
+
+$contactLocation = themeRedux('th-global-personal-location');
+$contactPhone = themeRedux('th-global-personal-phone');
+$contactEmail = themeRedux('th-global-personal-email');
+
 get_header();
 have_posts() && the_post();
 ?>
@@ -27,7 +35,12 @@ have_posts() && the_post();
     <div class="container">
         <div class="u-text-center">
             <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered u-uppercase">
-                <h2 class="theme-heading__text">Zatrudnij mnie</h2>
+                <?php if($mainHeader): ?>
+                    <h2 class="theme-heading__text"><?= $mainHeader ?></h2>
+                <?php endif; ?>
+                <?php if($mainSubheader): ?>
+                    <div class="theme-heading__subtext"><?= $mainSubheader ?></div>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -39,9 +52,11 @@ have_posts() && the_post();
                             <div class="contact-way-box__icon">
                                 <span class="fa fa-map-marker"></span>
                             </div>
+                            <?php if($contactLocation): ?>
                             <div class="contact-way-box__content">
-                                Kraków
+                                <?= $contactLocation ?>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -51,9 +66,11 @@ have_posts() && the_post();
                             <div class="contact-way-box__icon">
                                 <span class="fa fa-envelope-open-o"></span>
                             </div>
-                            <div class="contact-way-box__content">
-                                kontakt@przemyslawchudzinski.pl
-                            </div>
+                            <?php if($contactEmail): ?>
+                                <div class="contact-way-box__content">
+                                    <?= $contactEmail ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -63,9 +80,11 @@ have_posts() && the_post();
                             <div class="contact-way-box__icon">
                                 <span class="fa fa-phone"></span>
                             </div>
+                            <?php if($contactPhone): ?>
                             <div class="contact-way-box__content">
-                                <div id="protectedPhone" data-protected-area data-content="+48 123 123 123" data-label="Pokaż"></div>
+                                <div id="protectedPhone" data-protected-area data-content="<?= $contactPhone ?>" data-label="Pokaż"></div>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
