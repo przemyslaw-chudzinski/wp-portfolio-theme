@@ -67,6 +67,11 @@
 
   &--tertiary {
     background-color: $color-tertiary;
+    color: $color-primary !important;
+  }
+
+  &--small {
+
   }
 
   &--with-radius {
