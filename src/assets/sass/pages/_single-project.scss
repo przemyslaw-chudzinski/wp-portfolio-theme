@@ -1,0 +1,48 @@
+#single-project-page {
+  //height: 100vh;
+  display: flex;
+  flex-flow: column;
+
+  @include media-breakpoint-up(lg) {
+    height: 100vh;
+    flex-flow: row;
+  }
+
+  .project-image {
+    //width: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 35vh;
+
+    @include media-breakpoint-up(lg) {
+      width: 60%;
+      height: auto;
+    }
+
+    .project-back-btn {
+      position: absolute;
+      left: 2.5rem;
+      bottom: 2.5rem;
+    }
+
+  }
+
+  .project-content {
+    padding: 2rem;
+    background: $color-primary-white;
+
+    @include media-breakpoint-up(lg) {
+      width: 40%;
+      overflow: auto;
+      padding: 10rem 2rem 2rem 2rem;
+    }
+
+    .project-meta {
+      margin: 1rem 0 2rem 0;
+    }
+
+  }
+
+}

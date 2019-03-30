@@ -1,16 +1,13 @@
 .theme-heading {
-
-  display: flex;
+  display: inline-flex;
   flex-flow: column;
-  align-items: center;
-
   margin-bottom: 6rem;
-  //padding-bottom: 3rem;
-  //height: 8rem;
 
   &--with-underline {}
 
   &--with-underline-centered {}
+
+  &--with-underline-aligned-left {}
 
   &--with-underline &__text {
 
@@ -22,32 +19,33 @@
       height: 5px;
       background-color: $color-secondary;
       display: block;
-      //margin-top: 2rem;
-      //margin-bottom: 3rem;
       transition: all .3s ease-in-out;
       position: absolute;
-      top: 150%; //6rem;
+      top: 150%;
     }
 
   }
 
   &--with-underline-centered &__text {
     &:after {
-      //margin-left: auto;
-      //margin-right: auto;
       left: 50%;
       transform: translateX(-50%);
     }
   }
 
+  &--with-underline-aligned-left &__text {
+    &:after {
+      left: 0;
+    }
+  }
+
   &__text {
     display: inline-block;
-    //margin-bottom: 8rem;
   }
 
   &__subtext {
     font-size: 1.5rem;
-    margin-top: 3rem;
+    margin: 3rem auto 0 auto;
     width: 70%;
   }
 

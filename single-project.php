@@ -9,62 +9,37 @@ $previewLink = get_post_meta(get_the_ID(), 'preview_link', true);
 get_header();
 ?>
 
-<!-- Header -->
-<header class="header header--big" data-has-parallax data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail-large') ?>">
-    <?= get_template_part('partials/navigation') ?>
-    <div class="container">
-        <div class="header__content">
-            <div class="header__content-text">
-                <h2 class="header__content-subheading u-color-primary">Aktualnie przeglądasz projekt</h2>
-                <h1 class="header__content-heading"><?= get_the_title() ?></h1>
-            </div>
-        </div>
-    </div>
-    <?php if($prev_post): ?>
-        <a href="<?= get_the_permalink($prev_post->ID) ?>" class="header__arrow header__arrow--left" aria-label="<?= $prev_post->post_title ?>">
-            <span class="fa fa-angle-left header__arrow-icon"></span>
-            <span class="header__arrow-tooltip header__arrow-tooltip--left"><?= $prev_post->post_title ?></span>
-        </a>
-    <?php endif; ?>
+<?= get_template_part('partials/navigation') ?>
 
-    <?php if ($next_post): ?>
-        <a href="<?= get_the_permalink($next_post->ID) ?>" class="header__arrow header__arrow--right" aria-label="<?= $next_post->post_title ?>">
-            <span class="fa fa-angle-right header__arrow-icon"></span>
-            <span class="header__arrow-tooltip header__arrow-tooltip--right"><?= $next_post->post_title ?></span>
-        </a>
-    <?php endif ?>
-    <div class="header__footer header__footer--left">
-        <a href="<?= get_projects_url() ?>" class="header__footer-link" aria-label="Lista projektów">
-            <span class="fa fa-angle-left header__footer-icon"></span>
-            Lista projektów
-        </a>
+<div id="single-project-page">
+    <!-- Project Image -->
+    <div class="project-image a-animated a-fadeInLeft a-delay-1" data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail-large') ?>">
+        <a class="project-back-btn theme-button theme-button--tertiary theme-button--with-radius theme-button--with-icon" href="<?= get_projects_url() ?>">Wszystkie projekty</a>
     </div>
-    <div class="header__footer header__footer--right">
-        <?php if (!empty($githubLink)): ?>
-        <a href="<?= $githubLink ?>" target="_blank" class="header__footer-link header__footer-link--outline d-none d-lg-inline-block" aria-label="Zobacz na github">
-            <span class="fa fa-github-alt header__footer-icon"></span>
-            Zobacz na github
-        </a>
-        <?php endif; ?>
-        <?php if (!empty($previewLink)): ?>
-        <a href="<?= $previewLink ?>" target="_blank" class="header__footer-link header__footer-link--outline ml-4 d-none d-lg-inline-block" aria-label="Zobacz w przeglądarce">
-            <span class="fa fa-internet-explorer header__footer-icon"></span>
-            Zobacz w przeglądarce
-        </a>
-        <?php endif; ?>
-    </div>
-    <div data-background-overlay class="header__overlay"></div>
-</header>
-<!-- END: Header -->
+    <!-- END: Project Image -->
 
-<main class="u-section u-bg-primary-grey">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <?= the_content(); ?>
-            </div>
+    <!-- Content -->
+    <main class="project-content">
+        <div class="theme-heading theme-heading--with-underline theme-heading--with-underline-aligned-left project-content__heading ">
+            <h1 class="theme-heading__text"><?= the_title() ?></h1>
         </div>
-    </div>
-</main>
+
+        <!-- Project meta -->
+        <div class="project-meta">
+            <?php if($githubLink): ?>
+                <a class="theme-button theme-button--primary theme-button--with-radius theme-button--medium a-animated a-fadeInUp a-delay-2" href="<?= $githubLink ?>">Zobacz na github.com</a>
+            <?php endif; ?>
+            <?php if($previewLink): ?>
+                <a class="theme-button theme-button--primary theme-button--with-radius theme-button--medium a-animated a-fadeInUp a-delay-3" href="<?= $previewLink ?>">Zobacz na żywo</a>
+            <?php endif; ?>
+        </div>
+        <!-- END: Project meta -->
+
+        <?= the_content() ?>
+    </main>
+    <!-- END: Content -->
+
+</div>
+
 
 <?= get_footer() ?>
