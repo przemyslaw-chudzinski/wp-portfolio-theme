@@ -14,7 +14,7 @@ get_header();
 <div id="single-project-page">
     <!-- Project Image -->
     <div class="project-image a-animated a-fadeInLeft a-delay-1" data-background-url="<?= get_the_post_thumbnail_url(null, 'banner-thumbnail-large') ?>">
-        <a class="project-back-btn theme-button theme-button--tertiary theme-button--with-radius theme-button--with-icon" href="<?= get_projects_url() ?>">Wszystkie projekty</a>
+        <a class="project-back-btn theme-button theme-button--tertiary theme-button--with-radius theme-button--with-icon a-animated a-fadeInUp a-delay-2" href="<?= get_projects_url() ?>">Wszystkie projekty</a>
     </div>
     <!-- END: Project Image -->
 
@@ -35,7 +35,21 @@ get_header();
         </div>
         <!-- END: Project meta -->
 
-        <?= the_content() ?>
+        <div>
+            <?= the_content() ?>
+        </div>
+
+        <!-- Content footer -->
+        <div class="project-footer">
+            <?php if($prev_post): ?>
+            <a href="<?= get_the_permalink($prev_post->ID) ?>">Poprzedni projekt: <?= $prev_post->post_title ?></a>
+            <?php endif; ?>
+            <?php if($next_post): ?>
+                <a href="<?= get_the_permalink($next_post->ID) ?>">Następny projekt: <?= $next_post->post_title ?></a>
+            <?php endif; ?>
+        </div>
+        <!-- END: Content footer -->
+
     </main>
     <!-- END: Content -->
 
