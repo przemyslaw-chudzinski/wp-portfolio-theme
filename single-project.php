@@ -42,10 +42,10 @@ get_header();
         <!-- Content footer -->
         <div class="project-footer">
             <?php if($prev_post): ?>
-            <a href="<?= get_the_permalink($prev_post->ID) ?>">Poprzedni projekt: <?= $prev_post->post_title ?></a>
+                <a class="project-footer__prev-next" href="<?= get_the_permalink($prev_post->ID) ?>"><span class="fa fa-angle-left"></span> <?= $prev_post->post_title ?></a>
             <?php endif; ?>
             <?php if($next_post): ?>
-                <a href="<?= get_the_permalink($next_post->ID) ?>">Następny projekt: <?= $next_post->post_title ?></a>
+                <a class="project-footer__prev-next" href="<?= get_the_permalink($next_post->ID) ?>"><?= $next_post->post_title ?> <span class="fa fa-angle-right"></span></a>
             <?php endif; ?>
         </div>
         <!-- END: Content footer -->
