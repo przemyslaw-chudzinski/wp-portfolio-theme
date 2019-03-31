@@ -1,5 +1,4 @@
 #single-project-page {
-  //height: 100vh;
   display: flex;
   flex-flow: column;
 
@@ -9,7 +8,6 @@
   }
 
   .project-image {
-    //width: 60%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -21,10 +19,13 @@
       height: auto;
     }
 
+    @include gradientOnAfter();
+
     .project-back-btn {
       position: absolute;
       left: 2.5rem;
       bottom: 2.5rem;
+      z-index: 200;
     }
 
   }
@@ -47,6 +48,15 @@
       display: flex;
       justify-content: space-between;
       margin-top: 3rem;
+
+      &__prev-next {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $color-primary;
+        &:hover {
+          color: lighten($color-primary, 30%);
+        }
+      }
     }
 
   }

@@ -98,7 +98,7 @@ have_posts() && the_post();
                         <div class="col-12 col-sm-6 col-lg-4">
                             <div class="technology-feature">
                                 <figure class="technology-feature__img">
-                                    <img data-lazy-img data-src="<?= $technology['image'] ?>" alt="javascript developer">
+                                    <img data-lazy-img data-src="<?= $technology['image'] ?>" alt="<?= $technology['text'] ?>">
                                 </figure>
                                 <div class="technology-feature__content">
                                     <?= $technology['text'] ?>
