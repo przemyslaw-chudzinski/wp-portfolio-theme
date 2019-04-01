@@ -24,14 +24,14 @@ get_header();
     <?php if($prev_post): ?>
         <a href="<?= get_the_permalink($prev_post->ID) ?>" class="header__arrow header__arrow--left" aria-label="<?= $prev_post->post_title ?>">
             <span class="fa fa-angle-left header__arrow-icon"></span>
-            <span class="header__arrow-tooltip header__arrow-tooltip--left"><?= $prev_post->post_title ?></span>
+            <span class="header__arrow-tooltip header__arrow-tooltip--left d-none d-lg-block"><?= $prev_post->post_title ?></span>
         </a>
     <?php endif; ?>
 
     <?php if ($next_post): ?>
         <a href="<?= get_the_permalink($next_post->ID) ?>" class="header__arrow header__arrow--right" aria-label="<?= $next_post->post_title ?>">
             <span class="fa fa-angle-right header__arrow-icon"></span>
-            <span class="header__arrow-tooltip header__arrow-tooltip--right"><?= $next_post->post_title ?></span>
+            <span class="header__arrow-tooltip header__arrow-tooltip--right d-none d-lg-block"><?= $next_post->post_title ?></span>
         </a>
     <?php endif ?>
 
