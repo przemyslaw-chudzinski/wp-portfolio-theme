@@ -35,6 +35,11 @@ class Wgt_ReadingTime extends WP_Widget
         $wordsArray = explode(' ', $this->post->post_content);
         return $this->readingTime = round(count($wordsArray) / 200);
     }
+
+    public function getTitle($instance)
+    {
+        return $instance['title'];
+    }
 }
 
 
