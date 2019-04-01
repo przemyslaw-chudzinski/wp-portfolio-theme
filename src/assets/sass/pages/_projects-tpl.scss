@@ -1,6 +1,8 @@
 .projects-list-secondary {
 
-  height: 100vh;
+  @include media-breakpoint-up(lg) {
+    height: 100vh;
+  }
 
   &__preview {
     background-color: $color-primary-light;
@@ -70,11 +72,6 @@
   }
 
   &__list {
-    //width: 30%;
-    //margin-left: 70%;
-    //display: flex;
-    //flex-wrap: wrap;
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -84,15 +81,8 @@
       margin-left: 70%;
     }
 
-    //> a {
-    //  display: inline-block;
-    //}
-
     .project-secondary {
       width: 100%;
-      //@include media-breakpoint-up('lg') {
-      //  width: auto;
-      //}
     }
 
   }
