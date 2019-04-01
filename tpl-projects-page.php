@@ -4,21 +4,12 @@
  */
 
 $projects = fetch_latest_posts('project', 20);
+
+$projectsHeader = themeRedux('th-projects-tp-about-s-header');
+$projectsSubheader = themeRedux('th-projects-tp-about-s-subheader');
+
 get_header();
 ?>
-
-<!-- Header -->
-<!--<header class="d-block d-lg-none header" data-background-url="--><?//= get_the_post_thumbnail_url() ?><!--">-->
-<!--    --><?//= get_template_part('partials/navigation') ?>
-<!--    <div class="container">-->
-<!--        <div class="header__content">-->
-<!--            <div class="header__content-text">-->
-<!--                <h1 class="header__content-heading">--><?//= get_the_title() ?><!--</h1>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</header>-->
-<!-- END: Header -->
 
 <div class="d-block d-lg-none">
     <?= get_template_part('partials/navigation') ?>
@@ -32,16 +23,24 @@ get_header();
             <div data-preview-loader class="projects-list-secondary__preview-loader">
                 <div class="preloader-1 preloader-1--primary-white preloader-1--size-big"></div>
             </div>
-            <div data-preview-label class="projects-list-secondary__preview-label">
-                Chatter
-            </div>
+            <div data-preview-label class="projects-list-secondary__preview-label"></div>
             <div data-preview-desc class="projects-list-secondary__preview-desc"></div>
         </div>
         <div class="projects-list-secondary__list">
+
+            <div class="theme-heading theme-heading--with-underline u-uppercase u-width-100 u-mr-1 u-ml-1">
+                <?php if($projectsHeader): ?>
+                    <h2 class="theme-heading__text"><?= $projectsHeader ?></h2>
+                <?php endif; ?>
+                <?php if($projectsSubheader): ?>
+                    <div class="theme-heading__subtext"><?= $projectsSubheader ?></div>
+                <?php endif; ?>
+            </div>
+
             <?php if (count($projects) > 0): ?>
                 <?php foreach ($projects as  $project): ?>
                     <!-- Project secondary -->
-                    <a href="<?= get_the_permalink($project->ID) ?>" class="d-block" aria-label="<?= $project->post_title ?>" style="width: 50%">
+                    <a href="<?= get_the_permalink($project->ID) ?>" class="d-block" aria-label="<?= $project->post_title ?>" style="width: 50%; padding: 1rem;">
                         <div class="project-secondary"
                              data-label="<?= $project->post_title ?>"
                              data-background-url="<?= get_the_post_thumbnail_url($project->ID, 'large') ?>"
@@ -49,10 +48,9 @@ get_header();
                              data-preview-desc="<?= get_post_meta($project->ID, 'desc_alternative', true) ?>"
                              data-item-key="<?= $project->ID ?>">
                             <div data-background-overlay class="header__overlay header__overlay--primary"></div>
-                            <div class="project-secondary__mobile-heading d-block d-lg-none">
-                                <div class="project-secondary__mobile-title"><?= $project->post_title ?></div>
-                                <div class="project-secondary__mobile-desc"><?= cut_text_by_chars_length(get_post_meta($project->ID, 'desc_alternative', true), 200) ?></div>
-                            </div>
+                        </div>
+                        <div class="project-secondary__mobile-title d-block d-lg-none">
+                            <?= $project->post_title ?>
                         </div>
                     </a>
                     <!-- END: Project secondary -->
