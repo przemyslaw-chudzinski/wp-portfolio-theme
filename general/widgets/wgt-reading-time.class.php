@@ -1,11 +1,13 @@
 <?php
 
-
 require_once 'traits/arguments-support.trait.php';
 
 class Wgt_ReadingTime extends WP_Widget
 {
     use ArgumentsSupport;
+
+    protected $post;
+    protected $readingTime;
 
     public function __construct()
     {
@@ -17,7 +19,16 @@ class Wgt_ReadingTime extends WP_Widget
 
     public function widget($args, $instance)
     {
+        $this->post = get_post();
+        $this->calculateReadingTime();
         require_once 'wgt-reading-time.view.php';
+    }
+
+    protected function calculateReadingTime()
+    {
+        if (!isset($this->post)) return $this->readingTime = null;
+        $wordsArray = explode(' ', $this->post->post_content);
+        return $this->readingTime = round(count($wordsArray) / 200);
     }
 }
 
