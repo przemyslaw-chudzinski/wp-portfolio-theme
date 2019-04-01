@@ -10,8 +10,8 @@
   align-items: center;
 }
 
-@mixin horizontal-center {
-  position: absolute;
+@mixin horizontal-center($position: absolute) {
+  position: $position;
   left: 50%;
   transform: translateX(-50%);
 }
