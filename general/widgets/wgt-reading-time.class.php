@@ -36,9 +36,9 @@ class Wgt_ReadingTime extends WP_Widget
         return $this->readingTime = round(count($wordsArray) / 200);
     }
 
-    public function getWgtTitle($instance)
+    public function getWgtTitle($instance, $default = 'Cas czytania')
     {
-        return $instance['title'];
+        return isset($instance['title']) ? $instance['title'] : $default;
     }
 }
 
