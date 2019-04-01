@@ -63,9 +63,7 @@ get_header();
             <div class="col-12 col-lg-8">
                 <?= the_content(); ?>
             </div>
-            <div class="col-12 col-lg-2">
-                table of contents
-            </div>
+            <div class="col-12 col-lg-2"></div>
         </div>
     </div>
 </main>

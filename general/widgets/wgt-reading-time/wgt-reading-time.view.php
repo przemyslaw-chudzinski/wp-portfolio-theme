@@ -1,7 +1,7 @@
 <?php $this->getArg($args, 'before_widget', '<div>') ?>
 <!-- Title -->
 <?php $this->getArg($args, 'before_title', '<h2>') ?>
-    Czas Czytania
+    <?= $this->getWgtTitle($instance) ?>
 <?php $this->getArg($args, 'after_title', '</h2>') ?>
 <!-- END: Title -->
 

@@ -24,11 +24,21 @@ class Wgt_ReadingTime extends WP_Widget
         require_once 'wgt-reading-time.view.php';
     }
 
+    public function form($instance)
+    {
+        require 'wgt-reading-time.form.php';
+    }
+
     protected function calculateReadingTime()
     {
         if (!isset($this->post)) return $this->readingTime = null;
         $wordsArray = explode(' ', $this->post->post_content);
         return $this->readingTime = round(count($wordsArray) / 200);
+    }
+
+    public function getWgtTitle($instance, $default = 'Cas czytania')
+    {
+        return isset($instance['title']) ? $instance['title'] : $default;
     }
 }
 
