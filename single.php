@@ -56,7 +56,9 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-2">
-                <?php dynamic_sidebar('theme-post-sidebar-left') ?>
+                <div id="single-post-sidebar-left">
+                    <?php dynamic_sidebar('theme-post-sidebar-left') ?>
+                </div>
             </div>
             <div class="col-12 col-lg-8">
                 <?= the_content(); ?>
