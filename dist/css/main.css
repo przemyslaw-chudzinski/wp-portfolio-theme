@@ -4001,8 +4001,7 @@ code {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem;
-  margin-top: 10rem; }
+  padding: 1rem; }
   @media (min-width: 992px) {
     .projects-list-secondary__list {
       width: 30%;
