@@ -9,7 +9,7 @@ function theme_register_post_sidebar_left()
         'class'         => '',
         'before_widget' => '<div id="%1$s" class="widget single-post %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<div class="theme-heading theme-heading--with-underline theme-heading--with-underline-aligned-left project-content__heading "><h3 class="theme-heading__text">',
+        'before_title'  => '<div class="theme-heading theme-heading--with-underline theme-heading--with-underline-centered project-content__heading "><h3 class="theme-heading__text">',
         'after_title'   => '</h3></div>'
     ];
     register_sidebar($args);
