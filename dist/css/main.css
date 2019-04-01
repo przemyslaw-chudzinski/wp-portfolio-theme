@@ -3883,6 +3883,9 @@ code {
   left: 50%;
   transform: translateX(-50%); }
 
+#single-post-sidebar-left .single-post-wgt {
+  padding: 1rem 0; }
+
 #single-project-page {
   display: flex;
   flex-flow: column; }
