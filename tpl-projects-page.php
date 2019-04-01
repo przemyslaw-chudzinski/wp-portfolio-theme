@@ -8,17 +8,21 @@ get_header();
 ?>
 
 <!-- Header -->
-<header class="d-block d-lg-none header" data-background-url="<?= get_the_post_thumbnail_url() ?>">
-    <?= get_template_part('partials/navigation') ?>
-    <div class="container">
-        <div class="header__content">
-            <div class="header__content-text">
-                <h1 class="header__content-heading"><?= get_the_title() ?></h1>
-            </div>
-        </div>
-    </div>
-</header>
+<!--<header class="d-block d-lg-none header" data-background-url="--><?//= get_the_post_thumbnail_url() ?><!--">-->
+<!--    --><?//= get_template_part('partials/navigation') ?>
+<!--    <div class="container">-->
+<!--        <div class="header__content">-->
+<!--            <div class="header__content-text">-->
+<!--                <h1 class="header__content-heading">--><?//= get_the_title() ?><!--</h1>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</header>-->
 <!-- END: Header -->
+
+<div class="d-block d-lg-none">
+    <?= get_template_part('partials/navigation') ?>
+</div>
 
 <main>
     <!-- Projects list section -->
