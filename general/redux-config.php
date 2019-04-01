@@ -98,6 +98,7 @@
     require_once 'panel-options/contact-form-options.php';
     require_once 'panel-options/blog-page-options.php';
     require_once 'panel-options/home-template-page-options.php';
+    require_once 'panel-options/projects-template-page-options.php';
 
     /**
      * This is a test function that will let you see when the compiler hook occurs.

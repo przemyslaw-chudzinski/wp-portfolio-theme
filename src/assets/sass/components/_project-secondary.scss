@@ -30,20 +30,25 @@
     }
   }
 
-  &__mobile-heading {
-    font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    padding-top: 3rem;
-    text-align: center;
-    background-color: rgba($color-primary-dark, .6);
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+  //&__mobile-heading {
+  //  font-size: 2rem;
+  //  height: 100%;
+  //  width: 100%;
+  //  padding-top: 3rem;
+  //  text-align: center;
+  //  background-color: rgba($color-void, .3);
+  //  padding-left: 1rem;
+  //  padding-right: 1rem;
+  //}
 
-  &__mobile-desc {
-    color: $color-primary-white;
-    font-size: 1.2rem;
-    margin-top: 1rem;
+  //&__mobile-desc {
+  //  color: $color-primary-white;
+  //  font-size: 1.2rem;
+  //  margin-top: 1rem;
+  //}
+
+  &__mobile-title {
+    font-size: 1.5rem;
+    padding-top: .5rem;
   }
 }
