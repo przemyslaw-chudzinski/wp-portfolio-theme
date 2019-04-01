@@ -8,7 +8,7 @@ $navigationFacebookUrl = themeRedux('th-global-socialMedia-facebook');
 
 <!-- Navigation -->
 <div data-nav-sticky
-     class="navigation <?= !is_page_template('tpl-projects-page.php') ? 'navigation--sticky' : null ?> navigation--with-color a-animated a-fadeInDown">
+     class="navigation navigation--sticky navigation--with-color a-animated a-fadeInDown">
     <div class="container">
         <div class="row">
             <div class="col-8 col-lg-4">
