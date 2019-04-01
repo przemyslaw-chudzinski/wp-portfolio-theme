@@ -2569,6 +2569,12 @@ img {
 .u-text-inner {
   font-size: 1.5rem !important; }
 
+.u-width-100 {
+  width: 100% !important; }
+
+.u-width-50 {
+  width: 50% !important; }
+
 @keyframes rotateAnimation {
   from {
     transform: rotate(0); }
@@ -2967,19 +2973,9 @@ code {
   .project-secondary.active:after {
     background-color: #8187ff;
     opacity: .4; }
-  .project-secondary__mobile-heading {
-    font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    padding-top: 3rem;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  .project-secondary__mobile-desc {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-top: 1rem; }
+  .project-secondary__mobile-title {
+    font-size: 1.5rem;
+    padding-top: .5rem; }
 
 .search-btn {
   z-index: 800;
@@ -4004,10 +4000,16 @@ code {
 .projects-list-secondary__list {
   width: 100%;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding: 1rem; }
   @media (min-width: 992px) {
     .projects-list-secondary__list {
       width: 30%;
       margin-left: 70%; } }
   .projects-list-secondary__list .project-secondary {
+    width: 100%; }
+  .projects-list-secondary__list .theme-heading {
+    margin-bottom: 3rem; }
+  .projects-list-secondary__list .theme-heading__subtext {
+    margin: 3rem 0 0 0;
     width: 100%; }
