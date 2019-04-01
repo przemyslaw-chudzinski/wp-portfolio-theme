@@ -55,8 +55,14 @@ get_header();
 <main class="u-section">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 col-lg-2">
+                <?= dynamic_sidebar('theme-post-sidebar-left') ?>
+            </div>
+            <div class="col-12 col-lg-8">
                 <?= the_content(); ?>
+            </div>
+            <div class="col-12 col-lg-2">
+                table of contents
             </div>
         </div>
     </div>
