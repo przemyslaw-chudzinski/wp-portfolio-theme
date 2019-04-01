@@ -7,7 +7,6 @@ require_once 'general/rest-api.php';
 require_once 'general/extra-data.php';
 require_once 'general/redux-config.php';
 require_once 'general/sidebars.php';
-
 require_once 'general/widgets.php';
 
 /**
