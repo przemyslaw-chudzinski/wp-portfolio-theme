@@ -3,4 +3,9 @@
     margin: 0 auto 2rem auto;
     @include horizontal-center(relative);
   }
+
+  .single-post-wgt {
+    padding: 1rem 0;
+  }
+
 }
