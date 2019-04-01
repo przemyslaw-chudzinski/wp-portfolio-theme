@@ -1,6 +1,6 @@
 <?php
 
-require_once 'traits/arguments-support.trait.php';
+require get_template_directory().'/general/widgets/traits/arguments-support.trait.php';
 
 class Wgt_ReadingTime extends WP_Widget
 {

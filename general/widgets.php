@@ -1,6 +1,6 @@
 <?php
 
-require_once 'widgets/wgt-reading-time.class.php';
+require_once 'widgets/wgt-reading-time/wgt-reading-time.class.php';
 
 function theme_register_reading_time_wgt()
 {
