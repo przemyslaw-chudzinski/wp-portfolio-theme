@@ -3279,6 +3279,12 @@ code {
     padding: 1rem 0;
     font-size: 2rem; }
 
+.reading-time-wgt__icon {
+  font-size: 4rem; }
+
+.reading-time-wgt__content {
+  font-size: 2rem; }
+
 .header {
   height: 40rem;
   position: relative;
@@ -3870,6 +3876,12 @@ code {
 @media (min-width: 992px) {
   .contact-info-way:not(:last-child) {
     margin-bottom: 0; } }
+
+#single-post-sidebar-left .theme-heading {
+  margin: 0 auto 2rem auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); }
 
 #single-project-page {
   display: flex;
