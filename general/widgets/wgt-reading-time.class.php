@@ -24,6 +24,11 @@ class Wgt_ReadingTime extends WP_Widget
         require_once 'wgt-reading-time.view.php';
     }
 
+    public function form($instance)
+    {
+        require_once 'wgt-reading-time.form.php';
+    }
+
     protected function calculateReadingTime()
     {
         if (!isset($this->post)) return $this->readingTime = null;
