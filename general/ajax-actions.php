@@ -47,7 +47,7 @@ add_action('wp_ajax_nopriv_sendUserEmail', 'send_email_ajax');
 function phone_shown_ajax()
 {
     $to = 'kontakt@przemyslawchudzinski.pl';
-    $subject = 'Wiadomość ze strony przemyslawchudzinski.pl - Ktoś zobaczył twój numer telefonu';
+    $subject = 'Wiadomość ze strony przemyslawchudzinski.pl - Ktoś wyświetlił Twój numer telefonu';
     $message = '';
     $headers = ['Content-Type: text/html; charset=UTF-8'];
     $attachments = [];
@@ -57,7 +57,7 @@ function phone_shown_ajax()
     $message .= "<h2>Data: {$date}</h2>";
     $message .= "</div>";
     $message .= "<div style='margin-top: 20px; font-size: 16px; background-color: #e2e2e2; padding: 10px;'>";
-    $message .= "Ktoś zobaczył twój numer telefonu";
+    $message .= "Ktoś wyświetlił twój numer telefonu";
     $message .= "</div>";
 
 
@@ -65,4 +65,4 @@ function phone_shown_ajax()
 
     die;
 }
-add_action('wp_ajax_nopriv_emailShown', 'phone_shown_ajax');
+add_action('wp_ajax_nopriv_phoneShown', 'phone_shown_ajax');
