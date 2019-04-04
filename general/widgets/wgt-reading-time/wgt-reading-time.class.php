@@ -8,9 +8,14 @@ class Wgt_ReadingTime extends WP_Widget
 
     protected $post;
     protected $readingTime;
+    protected $words_per_min;
 
     public function __construct()
     {
+        $this->post = null;
+        $this->readingTime = 0;
+        $this->words_per_min = 150;
+
         $args = [
             'description' => 'Display time of reading'
         ];
@@ -20,6 +25,7 @@ class Wgt_ReadingTime extends WP_Widget
     public function widget($args, $instance)
     {
         $this->post = get_post();
+        $this->words_per_min = (int) $this->getWgtWordsPerMin($instance);
         $this->calculateReadingTime();
         require_once 'wgt-reading-time.view.php';
     }
@@ -33,12 +39,17 @@ class Wgt_ReadingTime extends WP_Widget
     {
         if (!isset($this->post)) return $this->readingTime = null;
         $wordsArray = explode(' ', $this->post->post_content);
-        return $this->readingTime = round(count($wordsArray) / 200);
+        return $this->words_per_min > 0 ? $this->readingTime = round(count($wordsArray) / (int) $this->words_per_min) : 0;
     }
 
     public function getWgtTitle($instance, $default = 'Cas czytania')
     {
         return isset($instance['title']) ? $instance['title'] : $default;
+    }
+
+    public function getWgtWordsPerMin($instance, $default = 200)
+    {
+        return isset($instance['words']) ? $instance['words'] : $default;
     }
 }
 
