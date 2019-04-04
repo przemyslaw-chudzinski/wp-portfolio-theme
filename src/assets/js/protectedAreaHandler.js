@@ -19,7 +19,7 @@ const {create, ajaxMethods} = require('./ajax');
             method: ajaxMethods.POST
         });
 
-        xhr.exec({action: 'emailShown'});
+        xhr.exec({action: 'phoneShown'});
     };
 
     addEventListener('protected:opened', _handler);

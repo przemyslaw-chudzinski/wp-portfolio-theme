@@ -12,8 +12,6 @@ PortfolioTheme.ProtectedAreaPlugin = (function () {
     const _setupSingleElement = protectedElement => {
         let hidden = isHidden(protectedElement);
 
-        console.log(hidden)
-
         if (!hidden) return _renderHiddenArea(protectedElement);
 
         const label = protectedElement.dataset.label || 'Wyświetl';
