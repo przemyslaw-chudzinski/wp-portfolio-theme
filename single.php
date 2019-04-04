@@ -55,7 +55,7 @@ get_header();
 <main class="u-section">
     <div class="container">
         <div class="row">
-            <div class="d-none d-lg-block col-12 col-lg-2">
+            <div class="d-none d-lg-block col-12 col-lg-4">
                 <div id="single-post-sidebar-left">
                     <?php dynamic_sidebar('theme-post-sidebar-left') ?>
                 </div>
@@ -63,7 +63,6 @@ get_header();
             <div class="col-12 col-lg-8">
                 <?= the_content(); ?>
             </div>
-            <div class="d-none d-lg-block col-12 col-lg-2"></div>
         </div>
     </div>
 </main>

@@ -3,7 +3,7 @@
 function theme_register_post_sidebar_left()
 {
     $args = [
-        'name'          => 'Left post page sidebar',
+        'name'          => 'Left sidebar at single post page',
         'id'            => 'theme-post-sidebar-left',
         'description'   => 'Left sidebar at single post page',
         'class'         => '',

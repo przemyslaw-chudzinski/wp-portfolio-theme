@@ -9,3 +9,9 @@
   }
 
 }
+
+.single-post-wgt {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
