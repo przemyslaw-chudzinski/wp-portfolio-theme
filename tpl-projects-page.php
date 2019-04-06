@@ -15,7 +15,7 @@ get_header();
     <?= get_template_part('partials/navigation') ?>
 </div>
 
-<main>
+<main id="projectsPageContent">
     <!-- Projects list section -->
     <section class="projects-list-secondary">
         <div data-preview-container class="d-none d-lg-block projects-list-secondary__preview">
@@ -26,9 +26,10 @@ get_header();
             <div data-preview-label class="projects-list-secondary__preview-label"></div>
             <div data-preview-desc class="projects-list-secondary__preview-desc"></div>
         </div>
+
         <div class="projects-list-secondary__list">
 
-            <div class="theme-heading theme-heading--with-underline u-uppercase u-width-100 u-mr-1 u-ml-1">
+            <div class="theme-heading theme-heading--with-underline u-uppercase u-width-100">
                 <?php if($projectsHeader): ?>
                     <h2 class="theme-heading__text"><?= $projectsHeader ?></h2>
                 <?php endif; ?>
