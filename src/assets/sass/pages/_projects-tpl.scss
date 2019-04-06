@@ -76,7 +76,6 @@
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
-    //margin-top: 10rem;
 
     @include media-breakpoint-up('lg') {
       width: 30%;
@@ -85,17 +84,26 @@
 
     .project-secondary {
       width: 100%;
-    }
+      height: 15rem;
 
-    .theme-heading {
-      margin-bottom: 3rem;
-    }
+      @include media-breakpoint-up(md) {
+        height: 23rem;
+      }
 
-    .theme-heading__subtext {
-      margin: 3rem 0 0 0;
-      width: 100%;
     }
 
   }
 
+}
+
+#projectsPageContent {
+  .theme-heading {
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+  }
+
+  .theme-heading__subtext {
+    margin: 3rem 0 0 0;
+    width: 100%;
+  }
 }
