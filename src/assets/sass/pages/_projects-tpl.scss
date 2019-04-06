@@ -1,7 +1,7 @@
 .projects-list-secondary {
 
   @include media-breakpoint-up(lg) {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   &__preview {
