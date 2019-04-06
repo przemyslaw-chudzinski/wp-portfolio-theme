@@ -4,6 +4,7 @@ PortfolioTheme.StickyNav = (function () {
 
     const init = () => {
         const navigation = document.querySelector('[data-nav-sticky]');
+        if (window.innerWidth < 992 && navigation) return navigation.classList.add(className);
         navigation && _setAptlyClass(navigation);
         navigation && addEventListener('scroll', () => _setAptlyClass(navigation));
     };
