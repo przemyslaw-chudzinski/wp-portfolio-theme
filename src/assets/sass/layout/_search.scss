@@ -9,7 +9,7 @@
   background-color: rgba($color-primary-dark, .9);
   opacity: 0;
   z-index: 1000;
-  transition: all .2s ease-in-out;
+  @include with-transition;
 
   &__close-btn {
     color: $color-secondary;
@@ -73,19 +73,17 @@
   }
 
   &__results {
-    position: absolute;
+    @include horizontal-center;
     top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
 
     p {
-      transition: all .2s ease-in-out;
+      @include with-transition;
     }
 
     a {
       color: $color-primary-white;
       font-size: 2rem;
-      transition: all .2s ease-in-out;
+      @include with-transition;
       &:hover {
         background-color: rgba($color-primary-white, .1);
         p {
@@ -126,10 +124,7 @@
   }
 
   .preloader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include center-all;
     display: none;
   }
 

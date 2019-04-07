@@ -1,32 +1,28 @@
 // Colors
 $color-primary-light: #8187ff;
-//$color-primary: #4717F6;
 $color-primary: #2f2fa2;
-//$color-primary-dark: #0031ca;
 $color-primary-dark: #242582;
-
 $color-primary-dark: #000;
 $color-secondary-dark: #000a12;
 $color-primary-white: #fff;
-
 $color-primary-grey: #f5f5f5;
 $color-secondary-grey: #c2c2c2;
-
-//$color-secondary: #A239CA;
 $color-secondary: #f64c72;
-
 $color-tertiary: #E7DFDD;
-
 $color-void: #0E0B16;
-
-$transition-base: all .2s ease-in-out;
-
 $color-danger: red;
 $color-warning: orange;
 $color-success: green;
 
-// Shadows
+// Transitions
+$transition-primary: (
+        target: all,
+        time: .2s,
+        easing: ease-in-out,
+        delay: 0
+);
 
+// Shadows
 $shadow-2: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 $shadow-3: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 $shadow-4: 0 6px 12px 0 rgba(0, 0, 0, 0.1);

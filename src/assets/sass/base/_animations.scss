@@ -7,6 +7,10 @@
     }
 }
 
+.a-rotate {
+  animation-name: rotateAnimation;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -15,6 +19,10 @@
   to {
     opacity: 1;
   }
+}
+
+.a-fadeIn {
+  animation-name: fadeIn;
 }
 
 @keyframes fadeInLeft {
@@ -61,6 +69,10 @@
   }
 }
 
+.a-fadeInUp {
+  animation-name: fadeInUp;
+}
+
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -77,10 +89,6 @@
   animation-name: fadeInDown;
 }
 
-.a-fadeInUp {
-  animation-name: fadeInUp;
-}
-
 .a-animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -88,16 +96,10 @@
   animation-fill-mode: both;
 }
 
-.a-delay-1 {
-  animation-delay: 1s;
-}
-
-.a-delay-2 {
-  animation-delay: 2s;
-}
-
-.a-delay-3 {
-  animation-delay: 3s;
+@for $i from 1 through 5 {
+  .a-delay-#{$i} {
+    animation-delay: #{$i}s;
+  }
 }
 
 

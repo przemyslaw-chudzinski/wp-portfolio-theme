@@ -2,10 +2,8 @@
   border: 1px solid $color-primary-light;
   border-radius: 3px;
   padding: 2rem 3rem;
-  display: flex;
   flex-flow: column;
-  align-items: center;
-  justify-content: center;
+  @include center-all-flex;
   background-color: $color-primary-white;
   &__heading {
     font-size: 2rem;

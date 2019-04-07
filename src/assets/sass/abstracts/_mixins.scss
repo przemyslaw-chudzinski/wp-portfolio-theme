@@ -1,6 +1,6 @@
 // alignment elements
-@mixin vertical-center {
-  position: absolute;
+@mixin vertical-center($position: absolute) {
+  position: $position;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -27,11 +27,17 @@
   justify-content: center;
 }
 
+@mixin center-all {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 // ------------------------------------------------------------------
 
 // Images
 @mixin make-responsive {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 // ------------------------------------------------------------------
@@ -53,3 +59,11 @@
 }
 // ------------------------------------------------------------------
 
+// Transitions
+@mixin with-transition {
+  transition: map-get($transition-primary, target) map-get($transition-primary, time) map-get($transition-primary, easing);
+  @if map-get($transition-primary, delay) > 0 {
+    transition-delay: map-get($transition-primary, delay);
+  }
+}
+// ------------------------------------------------------------------

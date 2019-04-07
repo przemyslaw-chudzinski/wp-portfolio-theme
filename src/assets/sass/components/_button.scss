@@ -9,7 +9,7 @@
     cursor: pointer;
     display: inline-block;
     padding: 1rem 3rem;
-    transition: $transition-base;
+    @include with-transition;
     span.fa {
       margin-right: 1rem;
     }
@@ -42,7 +42,6 @@
 }
 
 // New themes buttons
-
 .theme-button {
   &,
   &:link,
@@ -70,10 +69,6 @@
     color: $color-primary !important;
   }
 
-  &--small {
-
-  }
-
   &--with-radius {
     border-radius: 3000px;
   }
@@ -87,7 +82,7 @@
       content: '\f178';
       font-family: FontAwesome;
       margin-left: 2rem;
-      transition: all .3s ease-in-out;
+      @include with-transition;
     }
   }
 

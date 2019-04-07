@@ -1,5 +1,4 @@
 .label {
-
   &,
   &:link,
   &:active,
@@ -18,10 +17,6 @@
     border-color: $color-primary;
   }
 
-  &--secondary {
-
-  }
-
   &--white {
     background-color: $color-primary-white;
     color: $color-primary-white !important;
@@ -36,9 +31,7 @@
 
 }
 
-
 .theme-label {
-
   font-size: inherit;
   display: inline-block;
   padding: .5rem 1rem;
@@ -55,6 +48,4 @@
   &--tertiary {
     background-color: $color-tertiary;
   }
-
-
 }
