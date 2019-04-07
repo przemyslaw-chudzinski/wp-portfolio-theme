@@ -1,5 +1,7 @@
 .blog-section {
+
   padding: 5rem 0;
+
   &__categories {
     margin-bottom: 4rem;
     .label {
@@ -20,7 +22,6 @@
 }
 
 .home-header {
-
   .header__content-text {
     text-align: center;
   }
@@ -37,11 +38,9 @@
       background-color: $color-secondary;
       margin: 3rem auto auto auto;
     }
-
     @include media-breakpoint-up(lg) {
       font-size: 6rem;
     }
-
   }
 
   .header__content-desc {
@@ -52,13 +51,11 @@
     @include media-breakpoint-up(lg) {
       font-size: 1.5rem;
     }
-
   }
 
   &__btn {
     margin-top: 3rem;
   }
-
 }
 
 #home-page-posts-list {

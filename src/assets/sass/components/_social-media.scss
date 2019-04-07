@@ -1,19 +1,13 @@
 .social-media {
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-all-flex;
   cursor: pointer;
 
   &__icon {
     font-size: 4rem;
     color: $color-primary-white;
     display: block;
-    position: absolute;
-    transition: all .3s ease-in-out;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    @include with-transition;
+    @include center-all;
   }
 
   &__text {
@@ -21,7 +15,7 @@
     font-size: 2rem;
     position: absolute;
     display: block;
-    transition: all .3s ease-in-out;
+    @include with-transition;
     left: 50%;
     top: 200%;
     transform: translate(-50%, -50%);
@@ -39,7 +33,6 @@
   &:hover &__link {
     background-color: $color-primary-dark;
   }
-
 
   &:hover &__icon {
     top: -200%;

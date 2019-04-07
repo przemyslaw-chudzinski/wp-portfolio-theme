@@ -1,21 +1,12 @@
 .technology-feature {
-
   padding: 1rem 0;
-  display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  @include center-all-flex;
 
   &__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include center-all-flex;
     width: 15rem;
     height: 20rem;
-    img {
-      max-width: 100%;
-      height: auto;
-    }
   }
 
   &__content {

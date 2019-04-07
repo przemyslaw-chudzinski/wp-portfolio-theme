@@ -6,8 +6,7 @@
   transition: all .5s ease-in-out;
 
   &__brand {
-    display: flex;
-    align-items: center;
+    @include vertical-center-flex;
     justify-content: flex-start;
     cursor: pointer;
     height: 100%;
@@ -24,15 +23,13 @@
     width: 5rem;
     height: 5rem;
     img {
-      width: 100%;
-      height: auto;
+      @include make-responsive;
     }
   }
 
   &__brand-meta {
-    display: flex;
+    @include horizontal-center-flex;
     flex-flow: column;
-    justify-content: center;
     > span {
       display: block;
     }
@@ -65,7 +62,6 @@
   }
 
   &__list-item {
-
     display: flex;
     align-items: center;
 
@@ -97,8 +93,7 @@
     height: 4rem;
     border-radius: .3rem;
     border: .1rem solid $color-primary-white;
-    display: flex;
-    align-items: center;
+    @include vertical-center-flex;
     &__wrapper {
       display: flex;
       flex-flow: column;

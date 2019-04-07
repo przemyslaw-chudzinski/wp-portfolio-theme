@@ -1,9 +1,4 @@
-.form {
-
-}
-
 .form-group {
-
   margin-bottom: 1rem;
 
   &__input {
@@ -31,7 +26,6 @@
   }
 
   // Form validation rules
-
   &__input.has-error {
     border-color: $color-danger;
   }
@@ -59,10 +53,8 @@
       height: 2rem;
       margin-right: 1rem;
       float: left;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .3s ease-in-out;
+      @include center-all-flex;
+      @include with-transition;
     }
   }
 
