@@ -3,13 +3,9 @@
 }
 
 #blog-page-posts-list {
-  &:not(:last-child) {
+
+  .blog-page-single-post {
     margin-bottom: 2rem;
   }
 
-  @include media-breakpoint-up(xl) {
-    &:not(:last-child) {
-      margin-bottom: 0;
-    }
-  }
 }
