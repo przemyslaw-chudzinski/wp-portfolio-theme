@@ -87,3 +87,13 @@ if (!function_exists('themeRedux'))
         return isset($value) && $value !== '' ? $value : null;
     }
 }
+
+if (!function_exists('calculate_reading_time'))
+{
+    function calculate_reading_time($content, $words_per_min = 150)
+    {
+        if (!$content) return 0;
+        $wordsArray = explode(' ', $content);
+        return $words_per_min > 0 ? round(count($wordsArray) / (int) $words_per_min) : 0;
+    }
+}
