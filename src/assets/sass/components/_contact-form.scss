@@ -7,4 +7,9 @@
   div[data-form-message] > * {
     margin-bottom: 1rem;
   }
+
+  .is-dirty:not(.has-error) {
+    border-color: $color-success;
+  }
+
 }
