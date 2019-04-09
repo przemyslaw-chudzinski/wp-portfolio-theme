@@ -38,8 +38,7 @@ class Wgt_ReadingTime extends WP_Widget
     protected function calculateReadingTime()
     {
         if (!isset($this->post)) return $this->readingTime = null;
-        $wordsArray = explode(' ', $this->post->post_content);
-        return $this->words_per_min > 0 ? $this->readingTime = round(count($wordsArray) / (int) $this->words_per_min) : 0;
+        return $this->words_per_min > 0 ? $this->readingTime = calculate_reading_time($this->post->post_content) : 0;
     }
 
     public function getWgtTitle($instance, $default = 'Cas czytania')

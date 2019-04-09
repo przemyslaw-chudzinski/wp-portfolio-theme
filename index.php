@@ -41,13 +41,13 @@ get_header();
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="blog-page-posts-list">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <div id="blog-page-posts-list" class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 blog-page-single-post">
                         <?= get_template_part('partials/blog-post') ?>
                     </div>
                 <?php endwhile; else : ?>
-                    <p class="label label--primary">Niesty w tym momencie nie ma żadanych wpisów :(</p>
+                    <p class="label label--primary">Niestety w tym momencie nie ma żadanych wpisów :(</p>
                 <?php endif; ?>
             </div>
             <?= get_template_part('partials/pagination') ?>

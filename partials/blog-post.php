@@ -12,6 +12,7 @@
         <div class="blog-post__meta">
             <div class="blog-post__meta-author">Autor: <a class="blog-post__link" href="#"><?= get_the_author_meta('display_name', $post->post_author) ?></a></div>
             <div class="blog-post__meta-date">Opublikowano: <span><?= get_the_date('d-m-Y', $post->ID) ?></span></div>
+            <div class="blog-post__meta-date">Czas czytania : <span>~<?= calculate_reading_time($post->post_content) ?>min</span></div>
         </div>
     </div>
 </div>
