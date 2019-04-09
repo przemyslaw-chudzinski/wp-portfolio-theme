@@ -2,9 +2,13 @@
   position: fixed;
   left: 2.5rem;
   bottom: 2.5rem;
+  right: 2.5rem;
   z-index: 800;
-  width: 30%;
   font-size: 1.3rem;
+
+  @include media-breakpoint-up(lg) {
+    right: 70%;
+  }
 
   &__link {
     &:link,
