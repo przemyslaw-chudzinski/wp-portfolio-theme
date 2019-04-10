@@ -8,7 +8,6 @@
             <div class="theme-card__footer">
                 <a class="cookies-info__link" href="http://wszystkoociasteczkach.pl/polityka-cookies/" rel="nofollow">Dowiedz się więcej</a>
                 &nbsp;
-                <!--            <span class="fa fa-close cookies-info__close" data-cookies-btn></span>-->
                 <a href="javascript:void(0)" class="cookies-info__link" data-close-btn>Zamknij</a>
             </div>
         </div>
