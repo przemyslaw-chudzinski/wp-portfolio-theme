@@ -27,10 +27,10 @@ get_header();
         <!-- Project meta -->
         <div class="project-meta">
             <?php if($githubLink): ?>
-                <a class="theme-button theme-button--primary theme-button--with-radius theme-button--medium a-animated a-fadeInUp a-delay-2" href="<?= $githubLink ?>">Zobacz na github.com</a>
+                <a class="theme-button theme-button--primary theme-button--with-radius theme-button--medium a-animated a-fadeInUp a-delay-2" href="<?= $githubLink ?>" target="_blank">Zobacz na github.com</a>
             <?php endif; ?>
             <?php if($previewLink): ?>
-                <a class="theme-button theme-button--primary theme-button--with-radius theme-button--medium a-animated a-fadeInUp a-delay-3" href="<?= $previewLink ?>">Zobacz na żywo</a>
+                <a class="theme-button theme-button--primary theme-button--with-radius theme-button--medium a-animated a-fadeInUp a-delay-3" href="<?= $previewLink ?>" target="_blank">Zobacz na żywo</a>
             <?php endif; ?>
         </div>
         <!-- END: Project meta -->
